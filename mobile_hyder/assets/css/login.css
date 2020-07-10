@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    height:100vh;
+    width:100vw;
+    position: relative;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+header.main_header {
+    height: 20%;
+    width: 100%;
+    background-color: rgb(6, 32, 116);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_image {
+    height:10rem;
+    width: 10rem;
+    transform: all .5s;
+    animation-name: heart_beating;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+
+main {
+    height: 80%;
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+.main_text{
+    font-size: 2rem;
+    height:15%;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(34, 34, 187);
+    font-weight: bold;
+}
+
+.login_form{
+    
+    height:70%
+
+}
+
+.form_group {
+    padding-top:5rem;
+    width: 70%;
+    margin: auto auto;
+}
+
+.form_group > input {
+    width: 100%;
+    padding:1rem;
+    outline: none;
+    border:none;
+    border-bottom: 2px solid rgb(9, 9, 187);
+    background-color: white;
+    color:rgb(12, 12, 202);
+    font-size: 2rem;
+    text-align: center;
+
+}
+.btn {
+    display: block;
+    padding: 1rem 2rem;
+    margin: auto auto;
+    margin-top:2rem;
+    background-color: rgb(20, 20, 216);
+    color:white;
+    font-size: 1.8rem;
+    outline: none;
+    border:none;
+    border-radius: 1rem;
+   
+
+}
+
+.footer{
+    height: 10%;
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    position:absolute;
+    bottom: -20rem;
+    
+}
+
+
+
+
+
+@keyframes heart_beating {
+    0%{
+        height:7rem;
+        width: 7rem;
+    }
+
+    50%{
+        height: 8rem;
+        width: 8rem;
+    }
+
+    100%{
+        height: 10rem;
+        width: 10rem;
+    }
+}

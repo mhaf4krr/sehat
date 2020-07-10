@@ -1,0 +1,28 @@
+{
+    "version": "1.0.0",
+    "name": "sehat",
+    "app-name": "sehat",
+    "package-name": "webview",
+    "project-type": "webview",
+    "icon": "./assets/icon/heart.png",
+    "dist-path": "./dist",
+    "permission": [
+        "android.permission.INTERNET"
+    ],
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start:dev": "node .",
+        "build": "androidjs build"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "androidjs": "^2.0.2",
+        "vconsole": "^3.3.4"
+    },
+    "project-name": "sehat",
+    "theme": {
+        "fullScreen": true
+    }
+}
