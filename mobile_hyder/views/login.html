@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <!-- <script type="text/javascript" src="../node_modules/androidjs/lib/androidjs.js"></script> -->
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <header class="main_header">
+        <img src="../assets/images/heart.svg" class="header_image" alt="">
+    </header>   
+
+    <main>
+        <div class="main_text">
+            <p>Login with OTP</p>
+        </div>
+        
+        <div class="login_form">
+
+            <div class="form_group">
+                <input id="phone" type="number" placeholder="Phone Number">
+                <button id="gen_otp" class="btn">Generate OTP</button>
+            </div>
+
+            <div class="form_group">
+                <input type="number" name="" id="otp_value" placeholder="OTP">
+                <button id="verify_otp_btn" class="btn">Verify OTP</button>
+            </div>
+
+        </div>
+        
+
+        <footer class="footer">
+            <p class="footer_message"> OTP HAS BEEN GENERATED </p>
+        </footer>
+    </main>
+</body>
+
+<script src="../assets/js/login.js"></script>
+</html>
