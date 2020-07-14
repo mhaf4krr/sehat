@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="patient_container">
+      <div class="display_container">
+        <div class="display_container_inner-container">
+          <!-- display Results -->
+          <h2 class="heading-secondary">
+            User Existance
+          </h2>
+          <div class="display_details">
+            <div class="display_name dis"></div>
+            <br />
+            <div class="display_age dis"></div>
+            <br />
+            <div class="display_phone-no dis"></div>
+            <br />
+            <div class="display_email dis"></div>
+            <br />
+            <div class="display_residence dis"></div>
+            <br />
+          </div>
+          <div class="container-btn">
+            <button class="btn-primary" id="next">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="search_container">
+        <div class="search_container_inner-container">
+          <div class="search_heading">
+            <h3 class="heading-secondary">
+              Search User
+            </h3>
+            <div class="search-engine">
+              <div class="search_input">
+                <input
+                  type="text"
+                  class="phone-no"
+                  id="phone-input"
+                  placeholder="Phone-No."
+                />
+              </div>
+              <div class="container-btn">
+                <button class="btn-primary" id="search">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="result_details" id="result">
+            <div class="result_output" id="result_name">
+              &nbsp;
+            </div>
+          </div>
+          <div class="container-btn">
+            <button class="btn-primary" id="apply">
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/src/js/patient.js"></script>
+  </body>
+</html>

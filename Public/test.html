@@ -1,0 +1,157 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+
+    <title>Test |Search|Append</title>
+  </head>
+  <body>
+    <!-- <h1>List of tests</h1> -->
+    <!-- <div class="list-container">
+      
+      <div class="send">
+        <ul id="list-send"></ul>
+        <div class="total">
+          Total
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container-test">
+      <div class="test-patient-details">
+        <ul class="test_list">
+          <li class="test_item">
+            <span class="material-icons margin-small">account_circle</span>
+            <span class="test_item-detail" id="patient-name">
+              Abdul Manan Malik
+            </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              settings_cell
+            </span>
+            <span class="test_item-detail" id="patient-phone">
+              7006982627
+            </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              email
+            </span>
+            <span class="test_item-detail" id="patient-email">
+              malikmanan97@gmail.com
+            </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              today
+            </span>
+            <span class="test_item-detail" id="patient-gender">
+              Male
+            </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              location_on
+            </span>
+            <span class="test_item-detail" id="patient-address">
+              341, Jawahar-Nagar, Srinagar
+            </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              today
+            </span>
+            <span class="test_item-detail" id="patient-age">
+              22
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!--  section search -->
+
+      <div class="test-addition">
+        <div class="container-search">
+          <div class="test-search-bar">
+            <input
+              type="text"
+              class="phone-no"
+              id="test-ip"
+              placeholder="Test Name"
+            />
+            <span id="test-search-icon">
+              <button class="btn-search">
+                <span class="material-icons">
+                  search
+                </span>
+              </button></span
+            >
+          </div>
+
+          <div class="test-confirmation">
+            <span class="complete">
+              <button class="btn-complete">Complete</button>
+            </span>
+            <span class="partial">
+              <button class="btn-partial">Partial</button></span
+            >
+          </div>
+
+          <div class="recieve">
+            <span class="heading-secondary test-heading">Biotechnology</span>
+            <ul id="list" class="recieve-list">
+              <li class="recieve-list-item recieve-list-head" id="item">
+                <span class="left-serial-no recieve-list-head">S.no</span>
+                <span class="recieve-list-head" id="addItem">Test-Name</span>
+                <span class="recieve-list-head">Add</span>
+              </li>
+              <li class="recieve-list-item" id="item">
+                <span class="left-serial-no">1</span>
+                <span id="addItem">item1</span>
+                <button class="btn-add">Add</button>
+              </li>
+
+              <li class="recieve-list-item" id="item">
+                <span class="left-serial-no">2</span>
+                <span id="addItem">item2</span>
+                <button class="btn-add">Add</button>
+              </li>
+
+              <li class="recieve-list-item" id="item">
+                <span class="left-serial-no">3</span>
+                <span id="addItem">item3</span>
+                <button class="btn-add">Add</button>
+              </li>
+              <li class="recieve-list-item" id="item">
+                <span class="left-serial-no">3</span>
+                <span id="addItem">item3</span>
+                <button class="btn-add">Add</button>
+              </li>
+              <li class="recieve-list-item" id="item">
+                <span class="left-serial-no">3</span>
+                <span id="addItem">item3</span>
+                <button class="btn-add">Add</button>
+              </li>
+              <li class="recieve-list-item" id="item">
+                <span class="left-serial-no">3</span>
+                <span id="addItem">item3</span>
+                <button class="btn-add">Add</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- section results -->
+        <div class="container-result">
+          test record
+        </div>
+      </div>
+    </div>
+    <script src="/src/js/list.js"></script>
+  </body>
+</html>
