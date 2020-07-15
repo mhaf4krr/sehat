@@ -1,0 +1,104 @@
+.btn-primary {
+  color: white;
+  outline: none;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: $color-primary;
+  border: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+}
+.btn-search {
+  color: white;
+  outline: none;
+  display: inline-block;
+  padding: 0.76rem 1.2rem;
+  background: $color-primary;
+  border: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 3px;
+  }
+  &:hover {
+    color: $color-primary;
+    background: $color-secondary;
+    // transform: scale(1.2);
+    @include media(">=tablet", "<desktop") {
+      // transform: scale(1.1);
+    }
+  }
+}
+.btn-primary:hover {
+  color: $color-primary;
+  background: $color-secondary;
+  transform: scale(1.2);
+  @include media(">=tablet", "<desktop") {
+    transform: scale(1.1);
+  }
+}
+
+.btn-complete {
+  color: $color-green-dark;
+  outline: none;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: $color-green;
+  border: none;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border-radius: 1rem;
+  cursor: pointer;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+}
+.btn-partial {
+  color: $color-primary;
+  outline: none;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: $color-yellow;
+  border: none;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border-radius: 1rem;
+  cursor: pointer;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+}
+.btn-add {
+  color: $color-primary;
+  outline: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: $color-btn-add;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,12 @@
+.margin-small {
+  margin-bottom: 1rem;
+  @include media(">=tablet", "<desktop") {
+    margin-bottom: 0.7rem;
+  }
+}
+.margin-small-top {
+  margin-top: 1.5rem;
+  @include media(">=tablet", "<desktop") {
+    margin-top: 1.2rem;
+  }
+}
