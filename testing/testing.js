@@ -64,14 +64,13 @@ removeUl.addEventListener("click", (s) => {
       removeUl.removeChild(removeUl.firstChild);
     }
 
-    array.pop(remL);
+    let index = array.indexOf(remL);
+    array.splice(index, 1);
+    console.log(array);
     array.forEach((trace) => {
-      // console.log(array);
-      // console.log(removeUl);
       // serNo.textContent = array.lastIndexOf(trace) + 1;
       // console.log(serNo);
       removeUl.append(trace);
-      console.log(removeUl);
     });
   }
 });
