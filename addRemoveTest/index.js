@@ -13,9 +13,11 @@ let UIObject = {
         list_item.innerHTML = `
             <span> ${test_title} </span> <button class="remove" onclick="UIObject.removeElement(${this.counter})"> Remove </button>
       `;      
-        this.selected_list.appendChild(list_item)
+        
         this.selected_items.push(list_item)
         this.counter++;
+
+        this.renderSelectedItems()
     },
 
     removeElement : function(counter_value){
@@ -47,9 +49,14 @@ let UIObject = {
 
     renderSelectedItems : function(){
 
-        let holder = document.createElement("li")
+        let serial = 1;
+        let holder = document.createElement("ul")
         this.selected_items.forEach((item)=>{
-            holder.appendChild(item)
+            let li = document.createElement("li")
+            li.setAttribute("counter",item.getAttribute("counter"));
+
+            li.innerHTML = ` <span> ${serial++} </span> ${item.innerHTML}`
+            holder.appendChild(li)
         })
 
        this.selected_list.innerHTML = holder.innerHTML
