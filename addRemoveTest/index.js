@@ -55,7 +55,7 @@ let UIObject = {
             let li = document.createElement("li")
             li.setAttribute("counter",item.getAttribute("counter"));
 
-            li.innerHTML = ` <span> ${serial++} </span> ${item.innerHTML}`
+            li.innerHTML = ` <span> (${serial++}) </span> ${item.innerHTML}`
             holder.appendChild(li)
         })
 
