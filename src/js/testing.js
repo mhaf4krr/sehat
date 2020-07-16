@@ -1,75 +1,61 @@
 const list = document.querySelector("#list");
 const remList = document.querySelector("#list-send");
-// console.log(remList);
-let array = [];
-
-// let count = 0;
-// let sum = 0;
-
 const removeUl = document.querySelector(".list-send");
-console.log(removeUl);
 const total = document.querySelector(".total");
-console.log(list);
+const money = document.createElement("span");
+let sum = 0;
+
+let array = [];
+let priceArray = [];
 
 list.addEventListener("click", (e) => {
-  console.log("c");
-  //   count++;
   let remItem = document.createElement("li");
-
   let serNo = document.createElement("span");
   const remText = document.createElement("span");
   const remove = document.createElement("button");
   const price = document.createElement("span");
   price.textContent = parseInt(Math.random() * 500);
-
-  //   price.classList.add(".price");
-  //   serNo.classList.add(".serial-no");
-  //   serNo.textContent = `${count}. `;
+  serNo.classList.add("serial-no");
   remItem.append(serNo, remText, price, remove);
-  // console.log(remItem);
 
-  //   array.push(parseFloat(price.textContent));
-  if (e.target.className === "add") {
+  if (e.target.className === "btn-add") {
     const item = e.target.previousElementSibling.textContent;
     remText.textContent = item;
     remove.textContent = "Remove";
-    remove.classList.add("remove");
+    remove.classList.add("btn-remove");
     remItem.classList.add("item-send");
-    // array.forEach((p) => {
-    //   sum += p;
-    // });
+
+    priceArray.push(parseInt(price.textContent));
+
     array.push(remItem);
-    // console.log(array);
+
+    priceArray.forEach((p) => {
+      sum += p;
+    });
+    priceArray.pop();
+    money.textContent = sum;
+
     array.forEach((trace) => {
       serNo.textContent = array.lastIndexOf(trace) + 1;
-      // console.log(serNo);
     });
     removeUl.append(remItem);
-    // array.pop();
-
-    // total.textContent = sum;
-    // remList.append(remItem);
   }
-
-  //   console.log(serNo.textContent);
 });
+total.append(money);
 removeUl.addEventListener("click", (s) => {
-  if (s.target.className === "remove") {
+  if (s.target.className === "btn-remove") {
     let remL = s.target.parentElement;
+    const price = remL.children[2].textContent;
 
-    // array.pop(remL);
-
-    console.log(remL);
+    money.textContent -= price;
     while (removeUl.firstChild) {
       removeUl.removeChild(removeUl.firstChild);
     }
-
     let index = array.indexOf(remL);
     array.splice(index, 1);
-    console.log(array);
     array.forEach((trace) => {
-      // serNo.textContent = array.lastIndexOf(trace) + 1;
-      // console.log(serNo);
+      let serial = trace.firstChild;
+      serial.textContent = array.indexOf(trace) + 1;
       removeUl.append(trace);
     });
   }
