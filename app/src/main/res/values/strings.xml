@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BenazirAPI</string>
+    <string name="testing_apis">Testing APIs</string>
+    <string name="enter_test_id">Enter Test ID</string>
+    <string name="use_the_placeholder_below_to_enter_the_test_id_this_value_will_be_used_for_making_a_post_request">Use the placeholder below to enter the test id. This value will be used for making a POST request.</string>
+    <string name="make_request">Make Request</string>
+</resources>
