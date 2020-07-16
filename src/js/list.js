@@ -1,4 +1,5 @@
 const testIp = document.querySelector("#test-ip");
+const printNext = document.querySelector(".print_next");
 
 const search = document.querySelector("#test-search-icon");
 const listP = document.querySelector("#list");
@@ -13,7 +14,7 @@ const recieveSection = document.querySelector(".recieve");
 const addBtn = document.querySelectorAll(".btn-add");
 
 search.addEventListener("click", () => {
-  // testIp.style.textTransform = "capitalize";
+  testIp.style.textTransform = "capitalize";
   if (testIp.value.trim() === "") {
     testIp.style.border = "2px solid red";
   } else if (testIp.value.trim() === "Biotechnology") {
@@ -29,7 +30,9 @@ search.addEventListener("click", () => {
   }
 });
 completeBtn.addEventListener("click", () => {
-  // listSend.append(listP);
+  printNext.style.opacity = 1;
+  printNext.style.visibility = "visible";
+  printNext.style.transition = "all .3s";
   recieveSection.style.display = "inline-block";
   recieveSection.style.transition = "all .4s";
   addBtn.forEach((e) => {
@@ -37,10 +40,16 @@ completeBtn.addEventListener("click", () => {
   });
 });
 partailBtn.addEventListener("click", () => {
-  console.log(addBtn);
+  printNext.style.opacity = 1;
+  printNext.style.visibility = "visible";
+  printNext.style.transition = "all .3s";
   recieveSection.style.display = "inline-block";
   recieveSection.style.transition = "all .4s";
   addBtn.forEach((e) => {
     e.style.backgroundColor = "#f3c623";
   });
+});
+
+printNext.addEventListener("click", () => {
+  window.location = "../public/print.html";
 });

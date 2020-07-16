@@ -152,6 +152,8 @@
   overflow-y: auto;
   height: 230px;
   transition: all 0.2s;
+  backface-visibility: hidden;
+
   // padding: 5rem 0.5rem;
   @include media(">=tablet", "<desktop") {
     height: 400px;
@@ -169,6 +171,7 @@
   box-sizing: border-box;
 }
 .recieve-list-head {
+  background-color: $color-primary;
   position: sticky;
   border: 1px solid #0000;
   background: transparent;
@@ -237,7 +240,7 @@
   width: 60%;
   height: 100%;
   display: flex;
-
+  font-size: 2rem;
   justify-content: space-between;
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -248,8 +251,19 @@
 .total {
   position: absolute;
   bottom: 0;
-  left: 5%;
+  color: $color-primary;
+  font-size: 2rem;
+  font-weight: 500;
+
+  letter-spacing: 3px;
 }
+.total-value {
+  background-color: $color-green;
+  padding: 0.8rem 1.2rem;
+  color: $color-primary;
+  border-radius: 1rem;
+}
+
 .rem-head {
   text-align: center;
 }
@@ -263,4 +277,11 @@
   font-weight: 700;
   margin-bottom: 1.2rem;
   text-align: center;
+}
+.print_next {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
 }

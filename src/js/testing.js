@@ -3,6 +3,7 @@ const remList = document.querySelector("#list-send");
 const removeUl = document.querySelector(".list-send");
 const total = document.querySelector(".total");
 const money = document.createElement("span");
+money.classList.add("total-value");
 let sum = 0;
 
 let array = [];
@@ -40,9 +41,12 @@ list.addEventListener("click", (e) => {
     });
     removeUl.append(remItem);
   }
+  console.log(priceArray);
 });
 total.append(money);
+console.log(priceArray);
 removeUl.addEventListener("click", (s) => {
+  sum = 0;
   if (s.target.className === "btn-remove") {
     let remL = s.target.parentElement;
     const price = remL.children[2].textContent;

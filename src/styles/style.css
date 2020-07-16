@@ -272,7 +272,8 @@
   align-items: center;
   overflow-y: auto;
   height: 230px;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  backface-visibility: hidden; }
   @media (min-width: 768px) and (max-width: 1365px) {
     .recieve-list {
       height: 400px; } }
@@ -288,6 +289,7 @@
   box-sizing: border-box; }
 
 .recieve-list-head {
+  background-color: #224f6d;
   position: sticky;
   border: 1px solid #0000;
   background: transparent;
@@ -342,6 +344,7 @@
   width: 60%;
   height: 100%;
   display: flex;
+  font-size: 2rem;
   justify-content: space-between;
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -352,7 +355,16 @@
 .total {
   position: absolute;
   bottom: 0;
-  left: 5%; }
+  color: #224f6d;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px; }
+
+.total-value {
+  background-color: #b6eb7a;
+  padding: 0.8rem 1.2rem;
+  color: #224f6d;
+  border-radius: 1rem; }
 
 .rem-head {
   text-align: center; }
@@ -367,6 +379,13 @@
   font-weight: 700;
   margin-bottom: 1.2rem;
   text-align: center; }
+
+.print_next {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden; }
 
 .btn-primary {
   color: white;
