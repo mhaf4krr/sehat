@@ -2,5 +2,5 @@ const add = document.querySelector("#add");
 console.log("start");
 add.addEventListener("click", () => {
   console.log("b");
-  window.location = "../Public/patient.html";
+  window.location = "../public/patient.html";
 });

@@ -10,7 +10,7 @@ const phoneIp = document.querySelector("#phone-input");
 const next = document.querySelector("#next");
 
 next.addEventListener("click", () => {
-  window.location = "../Public/test.html";
+  window.location = "../public/test.html";
 });
 
 search.addEventListener("click", () => {
