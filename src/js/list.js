@@ -51,5 +51,5 @@ partailBtn.addEventListener("click", () => {
 });
 
 printNext.addEventListener("click", () => {
-  window.location = "../public/print.html";
+  window.print();
 });
