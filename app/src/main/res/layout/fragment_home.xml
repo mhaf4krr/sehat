@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:background="#FBFBF8"
+        android:layout_marginBottom="40dp"
+        tools:context=".HomeFragment">
+
+        <RelativeLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to HealthCare App"
+                android:textSize="28dp"
+                android:layout_centerInParent="true"
+                android:textColor="#037008"/>
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:id="@+id/mainGrid"
+            android:layout_weight="8"
+            android:layout_width="400dp"
+            android:layout_height="0dp"
+            android:columnCount="2"
+            android:rowCount="4"
+            android:columnOrderPreserved="false">
+            <!--Card 1-->
+        <androidx.cardview.widget.CardView
+                android:id="@+id/booking"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#D8F4B7"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/phone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Online Bookings"
+                        android:textColor="#9605AF"/>
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Card 2-->
+        <androidx.cardview.widget.CardView
+                android:id="@+id/reports"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#D8F4B7"
+                app:cardCornerRadius="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/reports"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Online Reports"
+                        android:textColor="#9605AF"/>
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--Card 3-->
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/visuals"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+            app:cardBackgroundColor="#D8F4B7"
+            app:cardCornerRadius="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/images"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Visual Representation"
+                        android:textColor="#9605AF"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Card 4-->
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/folders"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+            app:cardBackgroundColor="#D8F4B7"
+            app:cardCornerRadius="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/folders"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Organisation Folders"
+                        android:textColor="#9605AF"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Card 5-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/med1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#D8F4B7"
+                app:cardCornerRadius="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/med1"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="MedicineNAme"
+                        android:textColor="#9605AF"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--Card 6-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/med2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#D8F4B7"
+                app:cardCornerRadius="8dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/med3"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MedicineName"
+                android:textColor="#9605AF"/>
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--Card 7-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/add"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#D8F4B7"
+                app:cardCornerRadius="8dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/plus"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Additional Information"
+                android:textColor="#9605AF"/>
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!--Card 8-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ups"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#D8F4B7"
+                app:cardCornerRadius="8dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/kit"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Upcoming Appointments"
+                android:textColor="#9605AF"/>
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+    </LinearLayout>
