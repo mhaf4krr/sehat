@@ -146,6 +146,71 @@
     .phone-no::-webkit-input-placeholder {
       font-size: 0.9rem; } }
 
+#create {
+  position: absolute;
+  top: -5.4rem;
+  left: -2.2rem;
+  display: none; }
+
+.input_details {
+  display: none; }
+
+.form_input {
+  position: relative;
+  padding: 0.8rem;
+  margin: 1.5rem 0 0rem 0;
+  color: #224f6d;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 2px solid #224f6d;
+  transition: all 0.3s; }
+  .form_input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(49, 49, 49, 0.2); }
+  .form_input:placeholder-shown + .form_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(3rem); }
+
+.form_label {
+  font-family: inherit;
+  display: block;
+  transition: all 0.4s;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #224f6d;
+  margin-top: 0.5rem; }
+
+.form_input::-webkit-input-placeholder {
+  font-size: 1.2rem; }
+  @media (min-width: 768px) and (max-width: 1365px) {
+    .form_input::-webkit-input-placeholder {
+      font-size: 0.9rem; } }
+
+#patient-name {
+  width: 45%; }
+
+#patient-email {
+  width: 60%; }
+
+#patient-age {
+  width: 25%; }
+
+#patient-address {
+  width: 85%; }
+
+#patient-phone {
+  width: 40%; }
+
+.result_error {
+  color: red;
+  display: none; }
+
 .recieve {
   position: relative;
   margin-top: 3rem;
