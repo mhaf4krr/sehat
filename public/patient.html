@@ -14,6 +14,7 @@
           <h2 class="heading-secondary">
             User Existance
           </h2>
+
           <div class="display_details">
             <div class="display_name dis"></div>
             <br />
@@ -26,72 +27,80 @@
             <div class="display_residence dis"></div>
             <br />
           </div>
-
-          <div class="input_details">
-            <div class="display_name">
-              <input
-                type="text"
-                class="form_input"
-                id="patient-name"
-                placeholder="Full Name"
-                spellcheck="false"
-              />
-              <label for="patient-name" class="form_label">Full Name</label>
-            </div>
-
-            <div class="display_age">
-              <input
-                type="text"
-                class="form_input"
-                id="patient-age"
-                placeholder="D.O.B"
-                spellcheck="false"
-              />
-
-              <label for="patient-age" class="form_label">dd/mm/yyyy</label>
-            </div>
-            <br />
-            <div class="display_phone-no">
-              <input
-                type="text"
-                class="form_input"
-                id="patient-phone"
-                placeholder="Phone number"
-                spellcheck="false"
-              />
-
-              <label for="patient-name" class="form_label">Phone Number</label>
-            </div>
-            <br />
-            <div class="display_email">
-              <input
-                type="email"
-                class="form_input"
-                id="patient-email"
-                placeholder="Email-id"
-                spellcheck="false"
-              />
-
-              <label for="patient-name" class="form_label">Email</label>
-            </div>
-            <br />
-
-            <div class="display_residence">
-              <input
-                type="text"
-                class="form_input"
-                id="patient-address"
-                placeholder="Full Address"
-                spellcheck="false"
-              />
-              <label for="patient-name" class="form_label"
-                >Residential-Address</label
-              >
-            </div>
-          </div>
           <div class="container-btn">
             <button class="btn-primary" id="next">
               Next
+            </button>
+          </div>
+        </div>
+
+        <div class="input_details">
+          <h2 class="heading-secondary">
+            Add Patient
+          </h2>
+          <div class="display_name">
+            <input
+              type="text"
+              class="form_input"
+              id="patient-name"
+              placeholder="Full Name"
+              spellcheck="false"
+            />
+            <label for="patient-name" class="form_label">Full Name</label>
+          </div>
+
+          <div class="display_age">
+            <input
+              type="text"
+              class="form_input"
+              id="patient-age"
+              placeholder="D.O.B"
+              spellcheck="false"
+            />
+
+            <label for="patient-age" class="form_label">dd/mm/yyyy</label>
+          </div>
+          <br />
+          <div class="display_phone-no">
+            <input
+              type="text"
+              class="form_input"
+              id="patient-phone"
+              placeholder="Phone number"
+              spellcheck="false"
+            />
+
+            <label for="patient-name" class="form_label">Phone Number</label>
+          </div>
+          <br />
+          <div class="display_email">
+            <input
+              type="email"
+              class="form_input"
+              id="patient-email"
+              placeholder="Email-id"
+              spellcheck="false"
+            />
+
+            <label for="patient-name" class="form_label">Email</label>
+          </div>
+          <br />
+
+          <div class="display_residence">
+            <input
+              type="text"
+              class="form_input"
+              id="patient-address"
+              placeholder="Full Address"
+              spellcheck="false"
+            />
+            <label for="patient-name" class="form_label"
+              >Residential-Address</label
+            >
+          </div>
+          <div class="send_user margin-small-top">
+            <button class="btn-primary" id="next">
+              Send
             </button>
           </div>
         </div>
@@ -102,20 +111,20 @@
             <h3 class="heading-secondary">
               Search User
             </h3>
-            <div class="search-engine">
-              <div class="search_input">
-                <input
-                  type="text"
-                  class="phone-no"
-                  id="phone-input"
-                  placeholder="Phone-No."
-                />
-              </div>
-              <div class="container-btn">
-                <button class="btn-primary" id="search">
-                  Search
-                </button>
-              </div>
+          </div>
+          <div class="search-engine">
+            <div class="search_input">
+              <input
+                type="text"
+                class="phone-no"
+                id="phone-input"
+                placeholder="Phone-No."
+              />
+            </div>
+            <div class="container-btn">
+              <button class="btn-primary" id="search">
+                Search
+              </button>
             </div>
           </div>
 
@@ -123,14 +132,14 @@
             <div class="result_output" id="result_name">
               &nbsp;
             </div>
-            <span class="result_error">! User Not Found</span>
+            <!-- <span class="result_error">! User Not Found</span> -->
           </div>
           <div class="container-btn">
             <button class="btn-primary" id="apply">
               Apply
             </button>
           </div>
-          <div class="container-btn">
+          <div class="create-btn">
             <button class="btn-complete" id="create">
               Create
             </button>

@@ -4,6 +4,12 @@
     margin-bottom: 0.7rem;
   }
 }
+.margin-medium {
+  margin-bottom: 3.5rem;
+  @include media(">=tablet", "<desktop") {
+    margin-bottom: 3.2rem;
+  }
+}
 .margin-small-top {
   margin-top: 1.5rem;
   @include media(">=tablet", "<desktop") {

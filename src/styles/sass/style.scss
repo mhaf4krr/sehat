@@ -132,6 +132,7 @@ body {
   font-size: 2rem;
   color: $color-primary;
   margin-top: 2rem;
+  display: inline-block;
   @include media(">=tablet", "<desktop") {
     font-size: 1.5rem;
     margin-top: 1.5rem;
