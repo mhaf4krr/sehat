@@ -2,11 +2,13 @@ package com.example.benazirapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.icu.text.StringPrepParseException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,44 +28,89 @@ public class MainActivity extends AppCompatActivity {
     public void makeRequest(View view){
 
 
-        RequestQueue requestQueue=Volley.newRequestQueue(MainActivity.this);
-        EditText testText = (EditText) findViewById(R.id.test_id);
-        String testId = testText.getText().toString();
+        EditText testText = (EditText) findViewById(R.id.phoneID);
+        String phoneNumber = testText.getText().toString();
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        String url = "https://sehat.hyderdevelops.ml/tests/getOne?id=";
-        url = url.concat(testId);
+        String url = "https://sehat.hyderdevelops.ml/users/generateOTP?phone=";
+        url = url.concat(phoneNumber);
         Log.i("Url",url);
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONObject response) {
-                TextView patientUID , labName,location, testResult;
-                patientUID = findViewById(R.id.patient_uid);
-                labName = findViewById(R.id.lab_name);
-                location = findViewById(R.id.location);
-                testResult = findViewById(R.id.test_result);
+            public void onResponse(String response) {
 
                 try {
-
-                    patientUID.setText(response.getString("PATIENT_UID"));
-                    labName.setText(response.getString("LAB_NAME"));
-                    location.setText(response.getString("LAB_LOCATION"));
-                    testResult.setText(response.getString("TEST_RESULT"));
+                    Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_LONG).show();
                 }
-
-                catch (JSONException error){
-                    error.printStackTrace();
+                catch (Exception e){
+                    e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
 
-        requestQueue.add(request);
+            }
+        }){
+
+
+
+
+        };
+
+        queue.add(stringRequest);
     }
+
+
+    public void confrimOtp(View view){
+
+        EditText testText = (EditText) findViewById(R.id.phoneID);
+        String phoneNumber = testText.getText().toString();
+
+        EditText otp = (EditText) findViewById(R.id.otp_rec);
+        String otpValue = otp.getText().toString();
+
+        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+        String url = "https://sehat.hyderdevelops.ml/users/verifyOTP?phone=";
+        url = url.concat(phoneNumber);
+        url = url.concat("&otp=");
+        url = url.concat(otpValue);
+
+        Log.i("Url",url);
+
+
+
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+
+                try{
+                    Toast.makeText(getApplicationContext(),"OTP MATCHED".toString(),Toast.LENGTH_LONG).show();
+
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if(error.networkResponse.statusCode == 401){
+                    Toast.makeText(getApplicationContext(),"Login Denied".toString(),Toast.LENGTH_LONG).show();
+                }
+            }
+        }){
+
+
+
+
+        };
+
+        queue.add(stringRequest);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
