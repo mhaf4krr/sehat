@@ -10,6 +10,7 @@ app.options("*", cors());
 // parse application/json
 app.use(bodyParser.json());
 
+let informationStore = require("./controllers/informationStore");
 let mailer = require("./controllers/email_service").router;
 let database = require("./controllers/database");
 let labs = require("./controllers/labs");
@@ -20,6 +21,7 @@ app.use("/mailer", mailer);
 app.use("/users", users);
 app.use("/labs", labs);
 app.use("/tests", tests);
+app.use("/infoStore", informationStore);
 
 app.get("/", (req, res) => {
   res.send("Hello from Moon!");
