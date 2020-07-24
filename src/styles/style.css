@@ -350,14 +350,15 @@
   position: relative;
   display: inline-block;
   list-style: none;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   overflow-y: auto;
   height: 230px;
   transition: all 0.2s;
-  backface-visibility: hidden; }
+  padding: 0.5rem 0.5rem; }
   @media (min-width: 768px) and (max-width: 1365px) {
     .recieve-list {
       height: 400px; } }
@@ -365,24 +366,25 @@
 .recieve-list-item {
   width: 60%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   text-align: center;
   padding: 0.5rem 0.5rem;
-  box-sizing: border-box; }
+  margin-left: 2rem; }
 
 .recieve-list-head {
   background-color: #224f6d;
   position: sticky;
-  border: 1px solid #0000;
-  background: transparent;
-  position: sticky;
   top: 0;
+  border: 1px solid #0000;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
-  text-align: center; }
+  text-align: center;
+  padding: 0.5rem 0.5rem; }
 
 .recieve-list::-webkit-scrollbar {
   width: 12px;
@@ -465,11 +467,71 @@
   text-align: center; }
 
 .print_next {
-  position: absolute;
+  position: fixed;
   right: 5%;
-  bottom: 0;
-  opacity: 0;
-  visibility: hidden; }
+  bottom: 3%; }
+
+.cId {
+  display: none; }
+
+.print_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.lab_details {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(236, 233, 230, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/testing.jpg");
+  background-size: cover;
+  margin-bottom: 1rem;
+  padding: 2rem 0; }
+
+.print_test {
+  left: 33.5%;
+  top: 180%;
+  width: 45%;
+  position: absolute; }
+
+.print_total {
+  position: fixed;
+  bottom: 3%;
+  text-align: center;
+  background-color: #b6eb7a;
+  display: inline-block;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem; }
+
+.print_tweek {
+  position: absolute;
+  top: 90%;
+  width: 100%; }
+
+.print_print {
+  position: fixed;
+  bottom: 4%;
+  right: 3%;
+  color: #ffffff;
+  background-color: #224f6d;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  cursor: pointer; }
+  .print_print:hover {
+    transform: translateY(-0.5rem); }
+
+.print_svg {
+  position: absolute;
+  left: 5%;
+  top: 225%; }
+
+.print-img {
+  width: 25rem; }
 
 .btn-primary {
   color: white;

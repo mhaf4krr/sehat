@@ -10,6 +10,13 @@
 
     <title>Test |Search|Append</title>
   </head>
+  <script>
+    const QUERY = window.location.search;
+    const URL = new URLSearchParams(QUERY);
+    let data = URL.get("paramData");
+    data = JSON.parse(data);
+    console.log(data);
+  </script>
   <body>
     <!-- <h1>List of tests</h1> -->
     <!-- <div class="list-container">
@@ -22,49 +29,37 @@
         <ul class="test_list">
           <li class="test_item">
             <span class="material-icons margin-small">account_circle</span>
-            <span class="test_item-detail" id="patient-name">
-              Abdul Manan Malik
-            </span>
+            <span class="test_item-detail" id="patient-name"> </span>
           </li>
           <li class="test_item">
             <span class="material-icons margin-small">
               settings_cell
             </span>
-            <span class="test_item-detail" id="patient-phone">
-              7006982627
-            </span>
+            <span class="test_item-detail" id="patient-phone"> </span>
           </li>
           <li class="test_item">
             <span class="material-icons margin-small">
               email
             </span>
-            <span class="test_item-detail" id="patient-email">
-              malikmanan97@gmail.com
-            </span>
+            <span class="test_item-detail" id="patient-email"> </span>
           </li>
           <li class="test_item">
             <span class="material-icons margin-small">
               today
             </span>
-            <span class="test_item-detail" id="patient-gender">
-              Male
-            </span>
+            <span class="test_item-detail" id="patient-gender"> </span>
           </li>
           <li class="test_item">
             <span class="material-icons margin-small">
               location_on
             </span>
-            <span class="test_item-detail" id="patient-address">
-              341, Jawahar-Nagar, Srinagar
-            </span>
+            <span class="test_item-detail" id="patient-address"> </span>
           </li>
           <li class="test_item">
             <span class="material-icons margin-small">
               today
             </span>
-            <span class="test_item-detail" id="patient-age">
-              22
-            </span>
+            <span class="test_item-detail" id="patient-age"> </span>
           </li>
         </ul>
       </div>
@@ -100,16 +95,16 @@
           </div>
 
           <div class="recieve">
-            <span class="heading-secondary test-heading">Biotechnology</span>
+            <span class="heading-secondary test-heading">Bio-Chemistry</span>
             <ul id="list" class="recieve-list">
               <li class="recieve-list-item recieve-list-head" id="item">
                 <span class="left-serial-no recieve-list-head">S.no</span>
-                <span class="recieve-list-head" id="addItem">Test-Name</span>
+                <span class="recieve-list-head">Test-Name</span>
                 <span class="recieve-list-head">Add</span>
               </li>
-              <li class="recieve-list-item" id="item">
+              <!-- <li class="recieve-list-item" id="item">
                 <span class="left-serial-no">1</span>
-                <span id="addItem">item1</span>
+                <span class="addItem">item1</span>
                 <button class="btn-add">Add</button>
               </li>
 
@@ -138,6 +133,12 @@
                 <span class="left-serial-no">6</span>
                 <span id="addItem">item3</span>
                 <button class="btn-add">Add</button>
+              </li> -->
+            </ul>
+            <ul id="list-complete" class="recieve-list">
+              <li class="recieve-list-item recieve-list-head" id="item">
+                <span class="left-serial-no recieve-list-head">S.no</span>
+                <span class="recieve-list-head">Test-Name</span>
               </li>
             </ul>
           </div>
@@ -166,11 +167,9 @@
             </span>
           </div>
           <div class="print_next">
-            <button class="btn-primary">
-              <span class="material-icons">
-                local_printshop
-              </span>
-            </button>
+            <span id="data-next">
+              <button class="btn-primary">Next</button>
+            </span>
           </div>
         </div>
       </div>

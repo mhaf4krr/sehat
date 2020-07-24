@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/styles/style.css" />
+    <title>Printing Module</title>
+  </head>
+  <script>
+    const QUERY = window.location.search;
+    const URL = new URLSearchParams(QUERY);
+    let data = URL.get("paramData");
+    data = JSON.parse(data);
+    console.log(data);
+  </script>
+  <body>
+    <div class="print_container">
+      <div class="lab_details">
+        <h5 class="heading-secondary">Lab XYZ</h5>
+        <h5 class="heading-secondary" id="date"></h5>
+      </div>
+
+      <div class="test-patient-details print_tweek">
+        <ul class="test_list">
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              location_on
+            </span>
+            <span class="test_item-detail" id="patient-address"> </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">account_circle</span>
+            <span class="test_item-detail" id="patient-name"> </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              settings_cell
+            </span>
+            <span class="test_item-detail" id="patient-phone"> </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              email
+            </span>
+            <span class="test_item-detail" id="patient-email"> </span>
+          </li>
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              today
+            </span>
+            <span class="test_item-detail" id="patient-gender"> </span>
+          </li>
+
+          <li class="test_item">
+            <span class="material-icons margin-small">
+              today
+            </span>
+            <span class="test_item-detail" id="patient-age"> </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="print_test">
+        <span class="heading-secondary test-heading">&nbsp; </span>
+        <ul id="list" class="print_list">
+          <li class="recieve-list-item recieve-list-head" id="item">
+            <span class="left-serial-no recieve-list-head">S.no</span>
+            <span class="recieve-list-head">Test-Name</span>
+          </li>
+        </ul>
+      </div>
+      <div class="print_total">
+        <h5 class="print_heading">Total = <span id="total"></span></h5>
+      </div>
+      <div class="print_print">
+        <span class="material-icons">
+          print
+        </span>
+      </div>
+      <div class="print_svg">
+        <img src="../src/assets/print.png" class="print-img" alt="" />
+      </div>
+    </div>
+    <script src="../src/js/print.js"></script>
+  </body>
+</html>

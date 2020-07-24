@@ -1,17 +1,20 @@
 const URL = "https://sehat.hyderdevelops.ml";
 
 const search = document.querySelector("#search");
+const send = document.querySelector("#send");
 
 const errorResult = document.querySelector(".result_error");
 const create = document.querySelector(".create-btn");
 const resultName = document.querySelector("#result_name");
 const apply = document.querySelector("#apply");
+
 const age = document.querySelector(".display_age");
 const phone = document.querySelector(".display_phone-no");
 const email = document.querySelector(".display_email");
 const residence = document.querySelector(".display_residence");
 const user = document.querySelector(".display_name");
 const phoneIp = document.querySelector("#phone-input");
+
 const next = document.querySelector("#next");
 const inputContainer = document.querySelector(".input_details");
 const displayContainer = document.querySelector(
@@ -49,6 +52,7 @@ search.addEventListener("click", async () => {
       options
     );
     const text = await response.text();
+
     data = JSON.parse(text);
     console.log("per");
     result.textContent = data.FULL_NAME;
@@ -63,9 +67,6 @@ search.addEventListener("click", async () => {
     result.textContent = "! User Not Found";
     result.style.color = "red";
     result.style.border = "2px solid red";
-    // result.style.transition = "all .3s";
-
-    // create.style.transform = "translateY(-3rem)";
     apply.style.display = "none";
     create.style.top = "88%";
     create.style.opacity = 1;
@@ -75,6 +76,7 @@ search.addEventListener("click", async () => {
     // errorResult.style.display = "block";
     console.log("here");
   }
+  // 7006225524
 });
 apply.addEventListener("click", () => {
   displayContainer.style.left = "50%";
@@ -89,9 +91,10 @@ apply.addEventListener("click", () => {
   email.textContent = data.EMAIL;
   residence.textContent = data.REGION;
 });
-//
-
+// 9652145897
+// console.log(age);
 const dateField = document.querySelector("#patient-age");
+
 const userInput = document.querySelector(".form_input");
 
 dateField.addEventListener("keyup", (e) => {
@@ -105,18 +108,19 @@ dateField.addEventListener("keyup", (e) => {
   }
 });
 
-next.addEventListener("click", async () => {
+send.addEventListener("click", async () => {
   const FULL_NAME = document.querySelector("#patient-name").value;
   const EMAIL = document.querySelector("#patient-email").value;
   const REGION = document.querySelector("#patient-address").value;
-
-  // const KNOWN_ILLNESS = [`Diabetes`];
   const PHONE = document.querySelector("#patient-phone").value;
 
   var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 
   // Age Calculation
-  const userDate = new Date(dateField.value).getFullYear();
+  // console.log(dateField);
+  const array = dateField.value.split("/");
+  console.log(array);
+  const userDate = parseInt(array[2]);
   const currDate = new Date().getFullYear();
   const AGE = currDate - userDate;
 
@@ -125,14 +129,11 @@ next.addEventListener("click", async () => {
     return false;
   }
   // Fetch
-  const data = {
+  let data = {
     FULL_NAME,
     EMAIL,
     REGION,
     AGE,
-    HEIGHT,
-    WEIGHT,
-    KNOWN_ILLNESS,
     PHONE,
   };
   const options = {
@@ -142,10 +143,25 @@ next.addEventListener("click", async () => {
     },
     body: JSON.stringify(data),
   };
-
-  const response = await fetch(`${url}/users/register`, options);
+  console.log(data.FULL_NAME);
+  const response = await fetch(`${URL}/users/register`, options);
   const status = response.status;
   if (status === 200) {
-    window.location = "../public/test.html";
+    data = JSON.stringify(data);
+    let path = `../public/test.html?paramData=${data}`;
+    window.location.assign(path);
   }
+});
+
+next.addEventListener("click", () => {
+  let paramData = {
+    FULL_NAME: user.textContent,
+    PHONE: phone.textContent,
+    EMAIL: email.textContent,
+    REGION: residence.textContent,
+    AGE: age.textContent,
+  };
+  paramData = JSON.stringify(paramData);
+  let path = `../public/test.html?paramData=${paramData}`;
+  window.location.assign(path);
 });
