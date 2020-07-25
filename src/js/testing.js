@@ -11,7 +11,7 @@ let sum = 0;
 let array = [];
 let priceArray = [];
 let testArray = [];
-let serverArray = [];
+
 const { FULL_NAME, PHONE, EMAIL, REGION, AGE } = data;
 let timeStamp = new Date();
 timeStamp = `${timeStamp.getDate()}-${
@@ -64,13 +64,12 @@ list.addEventListener("click", (e) => {
 
     mainObj["test"].push(obj);
     console.log(testArray);
-    console.log(serverArray);
+    // console.log(serverArray);
     console.log(mainObj);
 
     remText.textContent = itemContent;
     remove.textContent = "Remove";
     remove.classList.add("btn-remove");
-    remItem.classList.add("item-send");
 
     priceArray.push(parseInt(price.textContent));
 
@@ -84,10 +83,9 @@ list.addEventListener("click", (e) => {
 
     array.forEach((trace) => {
       serNo.textContent = array.lastIndexOf(trace) + 1;
+      removeUl.append(trace);
     });
-    removeUl.append(remItem);
   }
-  console.log(priceArray);
 });
 total.append(money);
 console.log(priceArray);
@@ -106,7 +104,7 @@ removeUl.addEventListener("click", (s) => {
     array.splice(index, 1);
     testArray.splice(index, 1);
     mainObj["test"].splice(index, 1);
-    console.log(mainObj);
+    // console.log(mainObj);
     console.log(testArray);
     array.forEach((trace) => {
       let serial = trace.firstChild;
