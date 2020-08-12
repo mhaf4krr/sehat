@@ -13,6 +13,8 @@ router.post("/query", async (req, res) => {
         return {
           LABEL: test.LABEL,
           CID: test.CID,
+          RESULT:null,
+          RANGE:test.range
         };
       });
 
