@@ -1,0 +1,66 @@
+.report_container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.report_container {
+  //   position: absolute;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.test-Description {
+  //   position: absolute;
+  padding: 1rem 1.5rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid $color-primary;
+  border-radius: 3px;
+  margin: 2rem 0;
+}
+.report-generation-list {
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-primary;
+  list-style: none;
+  color: $white;
+  width: 100%;
+  &_item {
+    font-size: 1.2rem;
+    color: $white;
+    letter-spacing: 1.2px;
+  }
+}
+
+.form_report {
+  padding: 0.2rem 0.8rem;
+  // margin: 1.5rem 0 0rem 0;
+  color: $color-primary;
+  border-radius: 1px;
+  font-size: 1rem;
+  font-family: inherit;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  transition: all 0.1s;
+  border: 2px solid $color-primary;
+  width: 5rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color: #313131, $alpha: 0.2);
+    // border: none;
+    // border-bottom: 3px solid skyblue;
+  }
+}

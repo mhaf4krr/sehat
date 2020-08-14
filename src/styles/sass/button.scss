@@ -16,6 +16,63 @@
     border-radius: 4px;
   }
 }
+.btn-grey {
+  color: black;
+  outline: none;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background: #d8d3cd;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+}
+.btn-error {
+  color: white;
+  outline: none;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background: #ed6663;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+}
+.btn-low {
+  color: $white;
+  outline: none;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background: #776d8a;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+}
 .btn-search {
   color: white;
   outline: none;
@@ -42,6 +99,7 @@
     }
   }
 }
+
 .btn-primary:hover {
   color: $color-primary;
   background: $color-secondary;
@@ -61,6 +119,24 @@
   font-size: 1.5rem;
   font-family: inherit;
   border-radius: 1rem;
+  cursor: pointer;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+}
+.btn-normal {
+  color: $color-green-dark;
+  outline: none;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background: $color-green;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 1rem;
+  font-weight: bold;
   cursor: pointer;
   @include media(">=tablet", "<desktop") {
     padding: 0.5rem 1rem;
