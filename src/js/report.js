@@ -5,6 +5,13 @@ const reportSearch = document.querySelector("#report_search");
 const reportInput = document.querySelector(".report_input");
 const reportContainer = document.querySelector(".report_container");
 
+const patientName = document.querySelector("#patient-name");
+const patientPhone = document.querySelector("#patient-phone");
+const patientEmail = document.querySelector("#patient-email");
+const patientgender = document.querySelector("#patient-gender");
+const patientResidence = document.querySelector("#patient-address");
+const patientAge = document.querySelector("#patient-age");
+
 let data = {};
 reportSearch.addEventListener("click", async () => {
   console.log("clik");
@@ -21,6 +28,12 @@ reportSearch.addEventListener("click", async () => {
   );
   const patient = await response.json();
   data = patient;
+  patientName.textContent = patient.FULL_NAME;
+  patientPhone.textContent = patient.PHONE;
+  patientEmail.textContent = patient.EMAIL;
+  patientResidence.textContent = patient.REGION;
+  patientgender.textContent = patient.GENDER;
+  patientAge.textContent = patient.AGE;
   console.log(patient);
   data.test.forEach((test) => {
     const testContainer = document.createElement("div");
@@ -81,8 +94,8 @@ reportSearch.addEventListener("click", async () => {
 
     testElaboration.append(spanLine, testExplain);
     testContainer.append(testHeading, rGLT, rGL, testElaboration);
-
     reportContainer.append(testContainer);
+    // reportContainer.append(testContainer);
 
     // cId.textContent = test.CID;
     // cId.style.display = "none";
@@ -105,17 +118,17 @@ reportSearch.addEventListener("click", async () => {
     // );
     // reportInput.append(testContainer);
     reportValue.addEventListener("change", (e) => {
-      const checker = e.target.value;
+      const checker = parseFloat(e.target.value);
 
       if (checker > test.RANGE.max) {
         threshhold.className = "";
-        threshhold.classList.add("btn-remove");
+        threshhold.classList.add("btn-high");
         threshhold.textContent = "HIGH";
       } else if (checker >= test.RANGE.min && checker <= test.RANGE.max) {
         threshhold.className = "";
         threshhold.classList.add("btn-normal");
         threshhold.textContent = "NORMAL";
-      } else if (checker < test.RANGE.min) {
+      } else if (checker < test.RANGE.min && checker > 0) {
         threshhold.className = "";
         threshhold.classList.add("btn-low");
         threshhold.textContent = "LOW";

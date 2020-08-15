@@ -144,6 +144,25 @@
     border-radius: 6px;
   }
 }
+.btn-high {
+  color: azure;
+  background-color: orange;
+  outline: none;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+}
 .btn-partial {
   color: $color-primary;
   outline: none;
