@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/share/share.css" />
+    <title>sehat | Share</title>
+  </head>
+  <body>
+    <h2><%= user.FULL_NAME %>'s Periodic Data</h2>
+    <!-- user-details -->
+    <div class="borderrad">
+      <div class="user">
+        <div class="user_details">
+          <div class="details_svg material-icons margin-small">
+            account_circle
+          </div>
+          <div class="details" id="patient-name">
+            <%= user.FULL_NAME %>
+          </div>
+        </div>
+        <div class="user_details">
+          <div class="details_svg material-icons margin-small">
+            settings_cell
+          </div>
+          <div class="details" id="patient-phone">
+            <%= user.PHONE %>
+          </div>
+        </div>
+        <div class="user_details">
+          <div class="details_svg material-icons margin-small">
+            email
+          </div>
+          <div class="details" id="patient-email">
+            <%= user.EMAIL %>
+          </div>
+        </div>
+
+        <div class="user_details">
+          <div class="details_svg material-icons margin-small">
+            location_on
+          </div>
+          <div class="details" id="patient-address">
+            <%= user.REGION %>
+          </div>
+        </div>
+        <div class="user_details">
+          <div class="details_svg material-icons margin-small">
+            today
+          </div>
+          <div class="details" id="patient-age">
+            <%= user.DOB%>
+          </div>
+        </div>
+      </div>
+      <!-- table  -->
+      <div class="table-wrapper">
+        <table class="fl-table">
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>TEST UID</th>
+              <th>DATED</th>
+              <th>LABEL</th>
+              <th>RESULT</th>
+              <th>RANGE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let i=1%> <% data.forEach(function(test) { %>
+
+            <tr>
+              <td><%= i++ %></td>
+              <td><%= test.TEST_UID%></td>
+              <td><%= test.TIMESTAMP%></td>
+              <td><%= test.TEST_LABEL%></td>
+              <td><%= test.RESULT%></td>
+              <td><%= test.MIN%> - <%= test.MAX%></td>
+            </tr>
+            <tr>
+              <% }); %>
+            </tr>
+          </tbody>
+
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -14,7 +14,7 @@ router.post("/query", async (req, res) => {
           LABEL: test.LABEL,
           CID: test.CID,
           RESULT:null,
-          RANGE:test.range
+          RANGE:test.RANGE
         };
       });
 
