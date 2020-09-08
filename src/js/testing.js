@@ -78,145 +78,147 @@ search.addEventListener("click", async () => {
   });
 });
 let leftArray = [];
-// completeBtn.addEventListener("click", () => {
-//   console.log("here");
-//   test.forEach((t) => {
-//     let getItem = document.createElement("li");
-//     let getSerNo = document.createElement("span");
-//     let getRemText = document.createElement("span");
+completeBtn.addEventListener("click", () => {
+  console.log("here");
+  test.forEach((t) => {
+    let getItem = document.createElement("li");
+    let getSerNo = document.createElement("span");
+    let getRemText = document.createElement("span");
 
-//     getItem.classList.add("recieve-list-item");
-//     getSerNo.classList.add("left-serial-no");
-//     getRemText.classList.add("addItem");
+    getItem.classList.add("recieve-list-item");
+    getSerNo.classList.add("left-serial-no");
+    getRemText.classList.add("addItem");
 
-//     let getId = document.createElement("span");
-//     getId.classList.add("cId");
-//     getId.textContent = t.CID;
+    let getId = document.createElement("span");
+    getId.classList.add("cId");
+    getId.textContent = t.CID;
 
-//     let minRange = document.createElement("span");
-//     minRange.classList.add("cId");
-//     minRange.textContent = t.RANGE.min;
-//     console.log(minRange);
-//     let maxRange = document.createElement("span");
-//     maxRange.classList.add("cId");
-//     maxRange.textContent = t.RANGE.max;
+    let minRange = document.createElement("span");
+    minRange.classList.add("cId");
+    minRange.textContent = t.RANGE.min;
+    console.log(minRange);
+    let maxRange = document.createElement("span");
+    maxRange.classList.add("cId");
+    maxRange.textContent = t.RANGE.max;
 
-//     console.log(t.RANGE.min);
+    console.log(t.RANGE.min);
 
-//     // add.classList.add("btn-add");
-//     getSerNo.textContent = test.lastIndexOf(t) + 1;
-//     getRemText.textContent = t.LABEL;
-//     getItem.append(getSerNo, maxRange, minRange, getId, getRemText);
-//     // add.textContent = "ADD";
-//     console.log(getItem);
-//     listC.style.display = "flex";
-//     listC.append(getItem);
-//     recieveSection.style.display = "inline-block";
-//     recieveSection.style.transition = "all .4s";
-//     listP.style.display = "none";
-//     // const completePrice = document.createElement("span");
-//     // completePrice.textContent = parseInt(Math.random() * 500);
-//     // completePriceArray.push(parseInt(completePrice.textContent));
+    // add.classList.add("btn-add");
+    getSerNo.textContent = test.lastIndexOf(t) + 1;
+    getRemText.textContent = t.LABEL;
+    getItem.append(getSerNo, maxRange, minRange, getId, getRemText);
+    // add.textContent = "ADD";
+    console.log(getItem);
+    listC.style.display = "flex";
+    listC.append(getItem);
+    recieveSection.style.display = "inline-block";
+    recieveSection.style.transition = "all .4s";
+    listP.style.display = "none";
+    // const completePrice = document.createElement("span");
+    // completePrice.textContent = parseInt(Math.random() * 500);
+    // completePriceArray.push(parseInt(completePrice.textContent));
 
-//     // array.push(remItem);
-//     let obj = {};
-//     let remItem = document.createElement("tr");
-//     let serNo = document.createElement("td");
-//     const remText = document.createElement("td");
+    // array.push(remItem);
+    let obj = {};
+    let remItem = document.createElement("tr");
+    let serNo = document.createElement("td");
+    const remText = document.createElement("td");
 
-//     const price = document.createElement("td");
-//     // remItem.classList.add("item-send");
-//     price.textContent = parseInt(Math.random() * 500);
-//     // serNo.classList.add("serial-no");
+    const price = document.createElement("td");
+    // remItem.classList.add("item-send");
+    price.textContent = parseInt(Math.random() * 500);
+    // serNo.classList.add("serial-no");
 
-//     remItem.append(serNo, remText, price);
+    remItem.append(serNo, remText, price);
 
-//     console.log(e.target.parentElement);
+    console.log(e.target.parentElement);
 
-//     const item = e.target.previousElementSibling;
+    const item = e.target.previousElementSibling;
 
-//     console.log(item);
-//     const itemContent = item.textContent;
-//     const id = item.previousElementSibling;
-//     const itemId = id.textContent;
-//     console.log(itemId);
-//     const min = id.previousElementSibling;
-//     const minRange = min.textContent;
-//     const max = min.previousElementSibling;
-//     const maxRange = max.textContent;
-//     console.log(min);
+    console.log(item);
+    const itemContent = item.textContent;
+    const id = item.previousElementSibling;
+    const itemId = id.textContent;
+    console.log(itemId);
+    const min = id.previousElementSibling;
+    minRange = min.textContent;
+    const max = min.previousElementSibling;
+    maxRange = max.textContent;
+    console.log(min);
 
-//     obj["LABEL"] = itemContent;
-//     obj["CID"] = itemId;
-//     obj["RESULT"] = null;
-//     obj["RANGE"] = {
-//       min: minRange,
-//       max: maxRange,
-//     };
-//     testArray.push(obj);
-//     mainObj["test"].push(obj);
+    obj["LABEL"] = itemContent;
+    obj["CID"] = itemId;
+    obj["RESULT"] = null;
+    obj["RANGE"] = {
+      min: minRange,
+      max: maxRange,
+    };
+    testArray.push(obj);
+    mainObj["test"].push(obj);
 
-//     console.log(testArray);
-//     // console.log(serverArray);
-//     console.log(mainObj);
+    console.log(testArray);
+    // console.log(serverArray);
+    console.log(mainObj);
 
-//     remText.textContent = itemContent;
+    remText.textContent = itemContent;
 
-//     priceArray.push(parseInt(price.textContent));
+    priceArray.push(parseInt(price.textContent));
 
-//     array.push(remItem);
+    array.push(remItem);
 
-//     priceArray.forEach((p) => {
-//       sum += p;
-//     });
-//   });
-//   total.append(money);
-//   console.log(priceArray);
-//   // tableBody.addEventListener("click", (s) => {
-//   //   sum = 0;
+    priceArray.forEach((p) => {
+      sum += p;
+    });
+  });
+  total.append(money);
+  console.log(priceArray);
+  // tableBody.addEventListener("click", (s) => {
+  //   sum = 0;
 
-//   //     let remL = s.target.parentElement;
-//   //     const price = remL.children[2].textContent;
+  //     let remL = s.target.parentElement;
+  //     const price = remL.children[2].textContent;
 
-//   //     let index = array.indexOf(remL);
-//   //     array.splice(index, 1);
-//   //     testArray.splice(index, 1);
-//   //     mainObj["test"].splice(index, 1);
+  //     let index = array.indexOf(remL);
+  //     array.splice(index, 1);
+  //     testArray.splice(index, 1);
+  //     mainObj["test"].splice(index, 1);
 
-//   //     console.log(testArray);
-//   //     array.forEach((trace) => {
-//   //       let serial = trace.firstChild;
-//   //       serial.textContent = array.indexOf(trace) + 1;
-//   //       tableBody.append(trace);
-//   //     });
+  //     console.log(testArray);
+  //     array.forEach((trace) => {
+  //       let serial = trace.firstChild;
+  //       serial.textContent = array.indexOf(trace) + 1;
+  //       tableBody.append(trace);
+  //     });
 
-//   //   completePriceArray.forEach((trace) => {
-//   //     completeMoney.textContent = trace;
-//   //   });
-//   //   completePriceArray.forEach((p) => {
-//   //     completeSum += p;
-//   //   });
-//   //   completePriceArray.pop();
-//   //   total.textContent = completeSum;
-//   //   listP.style.display = "none";
-//   //   console.log(completePriceArray);
-//   //   setTimeout(() => {
-//   //     tableBody.append(completeMoney);
-//   //     tableBody.append(getItem);
-//   //   }, 1000);
-//   // });
-//   // printNext.style.opacity = 1;
-//   // printNext.style.visibility = "visible";
-//   // printNext.style.transition = "all .3s";
-//   // recieveSection.style.display = "inline-block";
-//   // recieveSection.style.transition = "all .4s";
-//   // addBtn.forEach((e) => {
-//   //   e.style.backgroundColor = "#b6eb7a";
-//   // });
-//   // console.log(array[0].children);
-// });
+  //   completePriceArray.forEach((trace) => {
+  //     completeMoney.textContent = trace;
+  //   });
+  //   completePriceArray.forEach((p) => {
+  //     completeSum += p;
+  //   });
+  //   completePriceArray.pop();
+  //   total.textContent = completeSum;
+  //   listP.style.display = "none";
+  //   console.log(completePriceArray);
+  //   setTimeout(() => {
+  //     tableBody.append(completeMoney);
+  //     tableBody.append(getItem);
+  //   }, 1000);
+  // });
+  // printNext.style.opacity = 1;
+  // printNext.style.visibility = "visible";
+  // printNext.style.transition = "all .3s";
+  // recieveSection.style.display = "inline-block";
+  // recieveSection.style.transition = "all .4s";
+  // addBtn.forEach((e) => {
+  //   e.style.backgroundColor = "#b6eb7a";
+  // });
+  // console.log(array[0].children);
+});
 let partialCount = 0;
+
 partialBtn.addEventListener("click", () => {
+  partialCount++;
   console.log(partialCount);
   if (partialCount > 1) {
     partialBtn.disabled = "true";
