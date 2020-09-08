@@ -105,7 +105,7 @@ router.post("/generateOTP", async (req, res) => {
   }
 });
 
-router.get("/getUserByPhone", async (req, res) => {
+router.post("/getUserByPhone", async (req, res) => {
   let userPhone = req.query.phone;
   try {
     let user = await db.queryDatabase("users", { PHONE: userPhone });

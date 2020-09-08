@@ -8,6 +8,7 @@ let getUid = require("get-uid");
 router.post("/add", async (req, res) => {
   try {
     let data = req.body;
+    console.log(data);
 
     if (Object.keys(data) == 0) {
       res.send("Youre Sending no data, Chaman");
@@ -16,7 +17,7 @@ router.post("/add", async (req, res) => {
 
       data.TEST_UID = TEST_UID;
       await db.insertIntoDatabase("tests", data);
-      res.status(200).send(TEST_UID);
+      res.send(`${TEST_UID}`);
     }
   } catch (error) {
     res.send(error);
@@ -34,7 +35,7 @@ router.post("/getOne", async (req, res) => {
   }
 });
 
-router.post("update", async (req, res) => {
+router.post("/update", async (req, res) => {
   try {
     let test_id = req.body.TEST_UID;
     await db.ReplaceIntoDatabase("tests", { TEST_UID: test_id }, req.body);
