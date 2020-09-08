@@ -6,6 +6,7 @@
 @import "button.scss";
 @import "utility.scss";
 @import "report";
+@import "login";
 * {
   padding: 0;
   margin: 0;
@@ -30,22 +31,33 @@ body {
     padding: 0.8rem;
   }
 }
-
+.index_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  // background-color: green;
+  height: 96vh;
+  width: 100%;
+}
 .container {
   position: relative;
-  height: 96vh;
-  height: 100%;
+  // height: 95vh;
+  width: 65%;
+
   &_image-wrapper {
-    position: relative;
+    position: absolute;
     height: 96vh;
-    width: 75%;
+    width: 100%;
     background-image: linear-gradient(
-        to right,
-        rgba(34, 79, 109, 0.8),
-        rgba(34, 79, 109, 0.247)
+        50%,
+        rgba(90, 153, 196, 0.527),
+        rgba(45, 76, 97, 0.247)
       ),
       url("../assets/hero-img.jpg");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
 
     @include media(">=tablet", "<desktop") {
@@ -53,20 +65,20 @@ body {
     }
   }
   &_cards {
-    position: absolute;
-    height: 96%;
+    position: relative;
+    // height: 96%;
     padding: 2rem 0;
-    width: 75%;
+    width: 100%;
     top: 5%;
     border-radius: 4px;
-    overflow: hidden;
-    @include media(">=tablet", "<desktop") {
-      padding: 2rem 0;
-      width: 85%;
-      top: 10%;
-      left: -4%;
-      border-radius: 4px;
-    }
+    // overflow: hidden;
+    // @include media(">=tablet", "<desktop") {
+    //   padding: 2rem 0;
+    //   width: 85%;
+    //   top: 10%;
+    //   left: -4%;
+    //   border-radius: 4px;
+    // }
   }
 
   // &_cards .new-patient {
@@ -79,27 +91,27 @@ body {
   // }
 
   &_details {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: inline-block;
     height: 96vh;
-    width: 25%;
+    width: 15%;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 1rem;
     background-color: $color-primary;
-
-    padding: 2rem;
-    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.5rem;
     color: $white;
     display: flex;
     flex-direction: column;
+    text-transform: capitalize;
 
-    justify-content: space-between;
+    // justify-content: space-between;
     @include media(">=tablet", "<desktop") {
       padding: 1.6rem;
       font-size: 1.7rem;
     }
   }
+
   &-btn {
     position: relative;
     margin: 2rem 0rem;
@@ -151,14 +163,17 @@ body {
 
 .top-two {
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 6fr));
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 2.5rem 0;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-evenly;
+  // align-items: center;
+
+  padding: 1.5rem;
   @include media(">=tablet", "<desktop") {
-    margin: 2rem 0;
+    // margin: 2rem 0;
   }
 }
 
@@ -174,26 +189,33 @@ body {
   }
 }
 .general {
-  border: 1px solid $color-primary;
-  display: inline-block;
-  width: 20%;
+  // border: 1px solid $color-primary;
+  margin: 1.5rem;
+  width: 75%;
   text-align: center;
   padding: 0 1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background-color: white;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
-    0 16px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  box-shadow: 8px 9px 16px rgba(173, 183, 199, 0.6),
+    -8px -9px 16px rgba(255, 255, 255, 0.5);
+
   @include media(">=tablet", "<desktop") {
-    width: 30%;
-    border-radius: 1.6rem;
+    // width: 30%;
+    border-radius: 1rem;
   }
 }
 
 .greeting {
-  margin-bottom: 2rem;
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  // margin-bottom: 3rem;
   @include media(">=tablet", "<desktop") {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -203,4 +225,64 @@ body {
   @include media(">=tablet", "<desktop") {
     font-size: 2.3rem;
   }
+}
+.noti-icon-style {
+  color: $color-primary;
+  font-size: 1.7rem;
+  // display: inline;
+  @include media(">=tablet", "<desktop") {
+    font-size: 1.2rem;
+  }
+}
+.flex-end {
+  position: absolute;
+  right: 1%;
+  cursor: pointer;
+}
+.copyright {
+  position: absolute;
+  bottom: 1%;
+}
+.notification-panel {
+  width: 20%;
+  overflow: hidden;
+}
+.notification-area {
+  padding: 1rem 1.5rem;
+  background-color: cornsilk;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+.notification-area-name {
+  padding: 1rem 1.5rem;
+  background-color: cornsilk;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  // justify-content: space-between;
+}
+.name:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+#tests {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#patient-name-noti {
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
 }

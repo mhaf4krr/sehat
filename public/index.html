@@ -7,96 +7,132 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="../src/styles/style.css" />
     <title>Lab | Dashboard</title>
   </head>
+  <!-- <script>
+    const QUERY = window.location.search;
+    const URL = new URLSearchParams(QUERY);
+    let data = URL.get("lab_data");
+    data = JSON.parse(data);
+    console.log(data);
+  </script> -->
   <body>
-    <div class="container">
-      <div class="container_image-wrapper">
-        &nbsp;
-      </div>
-      <div class="container_cards">
-        <div class="top-two">
-          <div class="new-patient general">
-            <span class="material-icons margin-small-top icon-style">
-              person_add
-            </span>
-            <h2 class="heading-secondary">
-              Patient Details
-            </h2>
-            <p class="para-secondary">
-              Lorem, ipsum dolor sit amet consectetur adipisicing.
-            </p>
-            <div class="container-btn">
-              <button class="btn-primary" id="add">
-                Add
-              </button>
-            </div>
-          </div>
-          <div class="test-module general">
-            <span class="material-icons margin-small-top icon-style">
-              assignment
-            </span>
-            <h2 class="heading-secondary">
-              Reports
-            </h2>
-            <p class="para-secondary">
-              Lorem, ipsum dolor sit amet consectetur adipisicing.
-            </p>
-            <div class="container-btn">
-              <button class="btn-primary" id="view">
-                View
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="bottom-two">
-          <div class="history general">
-            <span class="material-icons margin-small-top icon-style">
-              history
-            </span>
-            <h2 class="heading-secondary">
-              History
-            </h2>
-            <p class="para-secondary">
-              Lorem, ipsum dolor sit amet consectetur adipisicing.
-            </p>
-            <div class="container-btn">
-              <button class="btn-primary">
-                Check
-              </button>
-            </div>
-          </div>
-          <div class="update general">
-            <span class="material-icons margin-small-top icon-style">
-              biotech
-            </span>
-            <h2 class="heading-secondary">
-              Tests
-            </h2>
-            <p class="para-secondary">
-              Lorem, ipsum dolor sit amet consectetur adipisicing.
-            </p>
-            <div class="container-btn">
-              <button class="btn-primary">
-                Upgrade
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- index container start -->
+    <div class="index_container">
+      <!-- container details  -->
+
       <div class="container_details">
-        <div class="details">
-          <div class="greeting">
-            Welcome <span class="font-weight">Numaan</span>
+        <div class="greeting margin-small">Welcome</div>
+        <div class="margin-small">
+          <span class="font-weight" id="owner"></span>
+        </div>
+        <div class="lab-name margin-small" id="lab-name"></div>
+        <div class="margin-small" id="lab-location"></div>
+        <div class="lab-contact" id="lab-contact"></div>
+        <div class="copyright">
+          <span>&copy; Sehat <span id="current-year"></span></span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="container_image-wrapper">&nbsp;</div>
+        <div class="container_cards">
+          <div class="top-two">
+            <div class="new-patient general">
+              <span class="material-icons margin-small-top icon-style">
+                person_add
+              </span>
+              <h2 class="heading-secondary">Patient Details</h2>
+              <p class="para-secondary">
+                Lorem, ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <div class="container-btn">
+                <button class="btn-primary" id="add">Add</button>
+              </div>
+            </div>
+            <div class="test-module general">
+              <span class="material-icons margin-small-top icon-style">
+                assignment
+              </span>
+              <h2 class="heading-secondary">Reports</h2>
+              <p class="para-secondary">
+                Lorem, ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <div class="container-btn">
+                <button class="btn-primary" id="view">View</button>
+              </div>
+            </div>
+            <div class="upgrade general">
+              <span class="material-icons margin-small-top icon-style">
+                biotech
+              </span>
+              <h2 class="heading-secondary">Tests</h2>
+              <p class="para-secondary">
+                Lorem, ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <div class="container-btn">
+                <button class="btn-primary">Upgrade</button>
+              </div>
+            </div>
           </div>
-          <div class="lab-name">Lab Name XYZ</div>
-          <div class="details_image-container">
-            <img src="/image/watermark.PNG" class="details_img" alt="" />
+        </div>
+        <!-- <div class="bottom-two"> -->
+        <!--  -->
+
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- "" -->
+      </div>
+      <div class="notification-panel">
+        <span class="material-icons icon-style" id="notifications">
+          notifications
+        </span>
+        <div class="notification-area-name">
+          <div class="name">
+            <div class="material-icons noti-icon-style">account_circle</div>
+            <div id="patient-name-noti">Mufti Hyder Ali</div>
+            <div class="material-icons noti-icon-style flex-end">
+              arrow_drop_down
+            </div>
           </div>
-          <div class="lab-location"></div>
-          <div class="copyright-text"></div>
+        </div>
+        <div class="notification-area">
+          <div id="phone" class="name">
+            <span class="material-icons noti-icon-style">settings_cell</span>
+            <span id="patient-name-noti">7006225524</span>
+          </div>
+          <div id="email" class="name">
+            <span class="material-icons noti-icon-style">mail</span>
+            <span id="patient-name-noti">hyder@hyderdevelops.ml</span>
+          </div>
+          <div id="location" class="name">
+            <span class="material-icons noti-icon-style">location_on</span>
+            <span id="patient-name-noti">Elahhi Bagh</span>
+          </div>
+          <div id="date" class="name">
+            <span class="material-icons noti-icon-style">today</span>
+            <span id="patient-name-noti">29-Aug-2019</span>
+          </div>
+          <div id="noti-tests" class="name">
+            <span class="material-icons noti-icon-style">biotech</span>
+            <span class="test" id="patient-name-noti"
+              >Tests
+              <span class="material-icons noti-icon-style"
+                >arrow_right</span
+              ></span
+            >
+          </div>
+
+          <div id="price" class="name">
+            <span class="material-icons noti-icon-style">credit_card</span>
+            <span id="patient-name-noti">Rs 420</span>
+          </div>
         </div>
       </div>
     </div>

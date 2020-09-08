@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
@@ -12,6 +16,9 @@
   </head>
   <body>
     <div class="report_container">
+      <div class="heading-secondary">
+        <h2>Lab-Report</h2>
+      </div>
       <div class="report_container--search">
         <input
           type="text"
@@ -20,52 +27,41 @@
           placeholder="Unique Id"
           spellcheck="false"
         />
-        <button class="btn-primary" id="report_search">
-          <span class="material-icon">
-            Search
-          </span>
+        <label for="unique_id" class="form_label">Patient Id</label>
+        <button class="positioning btn-primary" id="report_search">
+          <span class="material-icons">search</span>
         </button>
       </div>
 
-      <div class="report_details">
-        <ul class="test_list">
-          <li class="test_item">
-            <span class="material-icons margin-small">
-              fingerprint
-            </span>
-            <span class="test_item-detail" id="patient-address"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small">account_circle</span>
-            <span class="test_item-detail" id="patient-name"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small">
-              settings_cell
-            </span>
-            <span class="test_item-detail" id="patient-phone"> </span>
-          </li>
-
-          <li class="test_item">
-            <span class="material-icons margin-small">
-              email
-            </span>
-            <span class="test_item-detail" id="patient-email"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small">
-              wc
-            </span>
-            <span class="test_item-detail" id="patient-gender"> </span>
-          </li>
-
-          <li class="test_item">
-            <span class="material-icons margin-small">
-              today
-            </span>
-            <span class="test_item-detail" id="patient-age"> </span>
-          </li>
-        </ul>
+      <div class="user-report">
+        <div class="user_details-report">
+          <div class="details_svg material-icons margin-small">
+            account_circle
+          </div>
+          <div class="details" id="patient-name-report"></div>
+        </div>
+        <div class="user_details-report">
+          <div class="details_svg material-icons margin-small">
+            settings_cell
+          </div>
+          <div class="details" id="patient-phone-report"></div>
+        </div>
+        <div class="user_details-report">
+          <div class="details_svg material-icons margin-small">email</div>
+          <div class="details" id="patient-email-report"></div>
+        </div>
+        <div class="user_details-report">
+          <div class="details_svg material-icons margin-small">wc</div>
+          <div class="details" id="patient-gender-reportr"></div>
+        </div>
+        <div class="user_details-report">
+          <div class="details_svg material-icons margin-small">location_on</div>
+          <div class="details" id="patient-address-report"></div>
+        </div>
+        <div class="user_details-report">
+          <div class="details_svg material-icons margin-small">today</div>
+          <div class="details" id="patient-age-report"></div>
+        </div>
       </div>
 
       <!-- <div class="test-Description"></div> -->

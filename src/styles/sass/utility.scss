@@ -19,3 +19,13 @@
 .font-small {
   font-size: 1.5rem;
 }
+.positioning {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 3px 3px 0px;
+}
+.positioning:hover {
+  transform: scale(1);
+}

@@ -5,16 +5,15 @@ const reportSearch = document.querySelector("#report_search");
 const reportInput = document.querySelector(".report_input");
 const reportContainer = document.querySelector(".report_container");
 
-const patientName = document.querySelector("#patient-name");
-const patientPhone = document.querySelector("#patient-phone");
-const patientEmail = document.querySelector("#patient-email");
-const patientgender = document.querySelector("#patient-gender");
-const patientResidence = document.querySelector("#patient-address");
-const patientAge = document.querySelector("#patient-age");
+const patientName = document.querySelector("#patient-name-report");
+const patientPhone = document.querySelector("#patient-phone-report");
+const patientEmail = document.querySelector("#patient-email-report");
+const patientgender = document.querySelector("#patient-gender-report");
+const patientResidence = document.querySelector("#patient-address-report");
+const patientAge = document.querySelector("#patient-age-report");
 
 let data = {};
 reportSearch.addEventListener("click", async () => {
-  console.log("clik");
   const options = {
     method: "POST",
     headers: {
@@ -26,6 +25,7 @@ reportSearch.addEventListener("click", async () => {
     `${URL}/tests/getOne?id=${testId.value}`,
     options
   );
+  console.log(response);
   const patient = await response.json();
   data = patient;
   patientName.textContent = patient.FULL_NAME;
@@ -136,6 +136,12 @@ reportSearch.addEventListener("click", async () => {
         threshhold.className = "";
         threshhold.classList.add("btn-grey");
         threshhold.textContent = "Invalid";
+      }
+    });
+    data.test.forEach((testName) => {
+      let testLabel = reportValue.previousSibling;
+      if (testLabel === testName.LABEL) {
+        testName.RESULT === reportValue.value;
       }
     });
   });

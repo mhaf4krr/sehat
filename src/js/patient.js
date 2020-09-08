@@ -17,6 +17,8 @@ const phoneIp = document.querySelector("#phone-input");
 
 const next = document.querySelector("#next");
 const inputContainer = document.querySelector(".input_details");
+const searchText = document.querySelector(".search-text");
+console.log(searchText);
 const displayContainer = document.querySelector(
   ".display_container_inner-container"
 );
@@ -25,7 +27,7 @@ const label = "object";
 let data = {};
 
 create.addEventListener("click", async () => {
-  displayContainer.style.left = "-50%";
+  displayContainer.style.left = "-80%";
   displayContainer.style.transition = "all .5s";
 
   inputContainer.style.left = "50%";
@@ -40,21 +42,33 @@ search.addEventListener("click", async () => {
   } else {
     phoneIp.style.border = "2px solid rgb(34, 79, 109)";
   }
+  searchText.style.opacity = "0";
+  searchText.style.visibility = "hidden";
+  search.classList.add("btn-loading");
+
   const options = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
   };
+  const response = await fetch(
+    `${URL}/users/getUserByPhone?phone=${phoneIp.value}`,
+    options
+  );
+  console.log(response.status);
+  if (response.status === "404") {
+    search.classList.remove("btn-loading");
+  }
   try {
-    const response = await fetch(
-      `${URL}/users/getUserByPhone?phone=${phoneIp.value}`,
-      options
-    );
-    const text = await response.text();
+    search.classList.remove("btn-loading");
+    searchText.style.visibility = "visible";
+    searchText.style.opacity = "1";
 
+    console.log(response.status);
+    const text = await response.text();
     data = JSON.parse(text);
-    console.log("per");
+
     result.textContent = data.FULL_NAME;
     result.style.color = "rgb(34, 79, 109)";
     result.style.border = "2px solid rgb(34, 79, 109)";
@@ -64,6 +78,7 @@ search.addEventListener("click", async () => {
     create.style.visibility = "hidden";
     create.style.transition = "all .5s";
   } catch (err) {
+    search.classList.remove("btn-loading");
     result.textContent = "! User Not Found";
     result.style.color = "red";
     result.style.border = "2px solid red";
@@ -79,7 +94,7 @@ search.addEventListener("click", async () => {
   // 7006225524
 });
 apply.addEventListener("click", () => {
-  displayContainer.style.left = "50%";
+  displayContainer.style.left = "12%";
   displayContainer.style.transition = "all .5s";
 
   inputContainer.style.left = "-50%";
