@@ -37,13 +37,13 @@ notification.addEventListener("click", async () => {
   // }
 });
 
-// labName.textContent = data.LAB_NAME;
-// owner.textContent = data.OWNER;
-// labContact.textContent = data.CONTACT;
-// labLocation.textContent = data.LOCATION;
-// add.addEventListener("click", () => {
-//   window.location = "../public/patient.html";
-// });
+labName.textContent = data.LAB_NAME;
+owner.textContent = data.OWNER;
+labContact.textContent = data.CONTACT;
+labLocation.textContent = data.LOCATION;
+add.addEventListener("click", () => {
+  window.location = "../public/patient.html";
+});
 
 view.addEventListener("click", () => {
   window.location = "../public/report.html";
