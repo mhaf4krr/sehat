@@ -1,6 +1,7 @@
 const db = require("./database");
 const express = require("express");
 const router = express.Router();
+let getUid = require("get-uid");
 
 /* API for user Registration and Saving it to DB */
 
@@ -11,8 +12,11 @@ router.post("/add", async (req, res) => {
     if (Object.keys(data) == 0) {
       res.send("Youre Sending no data, Chaman");
     } else {
+      let TEST_UID = getUid();
+
+      data.TEST_UID = TEST_UID;
       await db.insertIntoDatabase("tests", data);
-      res.send("test Added to DB");
+      res.status(200).send(TEST_UID);
     }
   } catch (error) {
     res.send(error);
