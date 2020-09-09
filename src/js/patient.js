@@ -42,9 +42,9 @@ search.addEventListener("click", async () => {
   } else {
     phoneIp.style.border = "2px solid rgb(34, 79, 109)";
   }
-  searchText.style.opacity = "0";
-  searchText.style.visibility = "hidden";
-  search.classList.add("btn-loading");
+  // searchText.style.opacity = "0";
+  // searchText.style.visibility = "hidden";
+  // search.classList.add("btn-loading");
 
   const options = {
     method: "POST",
@@ -52,22 +52,23 @@ search.addEventListener("click", async () => {
       "Content-Type": "application/json",
     },
   };
-  const response = await fetch(
-    `${URL}/users/getUserByPhone?phone=${phoneIp.value}`,
-    options
-  );
-  console.log(response.status);
-  if (response.status === "404") {
-    search.classList.remove("btn-loading");
-  }
+  // console.log(response.status);
+  // if (response.status === "404") {
+  //   search.classList.remove("btn-loading");
+  // }
   try {
-    search.classList.remove("btn-loading");
-    searchText.style.visibility = "visible";
-    searchText.style.opacity = "1";
+    const response = await fetch(
+      `${URL}/users/getUserByPhone?phone=${phoneIp.value}`,
+      options
+    );
+    // search.classList.remove("btn-loading");
+    // searchText.style.visibility = "visible";
+    // searchText.style.opacity = "1";
 
     console.log(response.status);
     const text = await response.text();
     data = JSON.parse(text);
+    console.log(data);
 
     result.textContent = data.FULL_NAME;
     result.style.color = "rgb(34, 79, 109)";

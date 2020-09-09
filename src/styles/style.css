@@ -524,7 +524,7 @@
 
 .print_total {
   position: fixed;
-  bottom: -15%;
+  bottom: 1.5%;
   text-align: center;
   background-color: #b6eb7a;
   display: inline-block;
@@ -1323,7 +1323,8 @@ body {
 
 .noti-icon-style {
   color: #224f6d;
-  font-size: 1.7rem; }
+  font-size: 1.7rem;
+  cursor: pointer; }
   @media (min-width: 768px) and (max-width: 1365px) {
     .noti-icon-style {
       font-size: 1.2rem; } }
@@ -1365,6 +1366,10 @@ body {
   flex-direction: row;
   align-items: center;
   text-align: center; }
+
+.custom-size {
+  font-size: 2rem;
+  cursor: pointer; }
 
 .name:not(:last-child) {
   margin-bottom: 1.5rem; }

@@ -11,8 +11,9 @@ const patientEmail = document.querySelector("#patient-email-report");
 const patientgender = document.querySelector("#patient-gender-report");
 const patientResidence = document.querySelector("#patient-address-report");
 const patientAge = document.querySelector("#patient-age-report");
-
+const reportSubmitBtn = document.querySelector("#report-submit-btn");
 let data = {};
+let testHeadingArr = [];
 reportSearch.addEventListener("click", async () => {
   const options = {
     method: "POST",
@@ -26,7 +27,9 @@ reportSearch.addEventListener("click", async () => {
     options
   );
   console.log(response);
-  const patient = await response.json();
+  let patient = await response.text();
+  patient = JSON.parse(patient);
+  console.log(patient);
   data = patient;
   patientName.textContent = patient.FULL_NAME;
   patientPhone.textContent = patient.PHONE;
@@ -35,12 +38,14 @@ reportSearch.addEventListener("click", async () => {
   patientgender.textContent = patient.GENDER;
   patientAge.textContent = patient.AGE;
   console.log(patient);
+
   data.test.forEach((test) => {
     const testContainer = document.createElement("div");
     testContainer.classList.add("test-Description");
     const testHeading = document.createElement("h2");
     testHeading.classList.add(".test_heading");
     console.log(testContainer);
+
     // const cId = document.createElement("span");
     const rGLT = document.createElement("ul");
     rGLT.classList.add("report-generation-list");
@@ -54,15 +59,18 @@ reportSearch.addEventListener("click", async () => {
     rGLT.append(reportValueT, threshholdT, minRangeT, maxRangeT, unitsT);
     // testLabel.textContent = test.LABEL;
     // 721713
+    // 806875668
     unitsT.textContent = "Unit";
     minRangeT.textContent = `Min`;
     maxRangeT.textContent = `Max`;
 
     const rGL = document.createElement("ul");
     testHeading.textContent = test.LABEL;
+    testHeadingArr.push(testHeading.textContent);
 
     rGL.classList.add("report-generation-list");
     const reportValue = document.createElement("input");
+    reportValue.setAttribute("test-label", testHeading.textContent);
     reportValue.classList.add("form_report");
     const threshhold = document.createElement("button");
     threshhold.classList.add("btn-grey");
@@ -117,6 +125,7 @@ reportSearch.addEventListener("click", async () => {
     //   testDescription
     // );
     // reportInput.append(testContainer);
+
     reportValue.addEventListener("change", (e) => {
       const checker = parseFloat(e.target.value);
 
@@ -138,11 +147,70 @@ reportSearch.addEventListener("click", async () => {
         threshhold.textContent = "Invalid";
       }
     });
-    data.test.forEach((testName) => {
-      let testLabel = reportValue.previousSibling;
-      if (testLabel === testName.LABEL) {
-        testName.RESULT === reportValue.value;
-      }
-    });
   });
 });
+
+reportSubmitBtn.addEventListener("click", async () => {
+  // console.log(data);
+  let c = document.querySelectorAll(".form_report");
+  console.log(c);
+
+  let temp_data = {};
+  c.forEach((node) => {
+    let label = node.getAttribute("test-label");
+    temp_data[label] = node.value;
+  });
+
+  console.log(temp_data);
+
+  data.test.forEach((test) => {
+    test.RESULT = temp_data[test.LABEL];
+  });
+
+  console.log(JSON.stringify(data));
+
+  // console.log("c");
+  // console.log(data);
+  // let dataArr = [];
+  // dataArr.push(data);
+  // console.log(dataArr);
+  // console.log(dataArr);
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    body: JSON.stringify(data),
+  };
+  try {
+    const response = await fetch(
+      `https://sehat.hyderdevelops.ml/tests/update`,
+      options
+    );
+    // console.log(response.text());
+    const data = await response.text();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+/*
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({"TEST_UID":"1358202106","NAME":"HYDER"});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://sehat.hyderdevelops.ml/tests/update", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+*/
