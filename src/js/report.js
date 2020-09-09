@@ -169,6 +169,16 @@ reportSubmitBtn.addEventListener("click", async () => {
 
   console.log(JSON.stringify(data));
 
+  let final_data = {};
+
+  for (key in data) {
+    if (key !== "_id") {
+      final_data[key] = data[key];
+    }
+  }
+
+  console.log(final_data);
+
   // console.log("c");
   // console.log(data);
   // let dataArr = [];
@@ -181,7 +191,7 @@ reportSubmitBtn.addEventListener("click", async () => {
       "Content-Type": "application/json",
     },
 
-    body: JSON.stringify(data),
+    body: JSON.stringify(final_data),
   };
   try {
     const response = await fetch(
