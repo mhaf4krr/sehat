@@ -26,6 +26,7 @@ reportSearch.addEventListener("click", async () => {
     `${URL}/tests/getOne?id=${testId.value}`,
     options
   );
+
   console.log(response);
   let patient = await response.text();
   patient = JSON.parse(patient);
@@ -224,3 +225,11 @@ fetch("https://sehat.hyderdevelops.ml/tests/update", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 */
+// D3:new Date
+// }
+
+/*date {
+  day: 
+  month:
+  year:
+} */

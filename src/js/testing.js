@@ -316,6 +316,12 @@ let mainObj = {
   AGE,
   test: [],
   TIMESTAMP: timeStamp,
+  D3: new Date(),
+  DATE: {
+    day: new Date().getDate(),
+    month: new Date().getMonth(),
+    year: new Date().getUTCFullYear(),
+  },
 };
 
 console.log(mainObj);
@@ -372,6 +378,7 @@ list.addEventListener("click", (e) => {
       min: minRange,
       max: maxRange,
     };
+
     testArray.push(obj);
 
     mainObj["test"].push(obj);
@@ -418,6 +425,7 @@ tableBody.addEventListener("click", (s) => {
     array.splice(index, 1);
     testArray.splice(index, 1);
     mainObj["test"].splice(index, 1);
+
     // console.log(mainObj);
     console.log(testArray);
     array.forEach((trace) => {
@@ -429,7 +437,6 @@ tableBody.addEventListener("click", (s) => {
 });
 
 next.addEventListener("click", async () => {
-  console.log("here");
   const options = {
     method: "POST",
     headers: {
@@ -437,6 +444,7 @@ next.addEventListener("click", async () => {
     },
     body: JSON.stringify(mainObj),
   };
+
   console.log(mainObj);
   const response = await fetch(`${URLApi}/tests/add`, options);
   const uniqueId = await response.text();
