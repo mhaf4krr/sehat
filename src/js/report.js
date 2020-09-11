@@ -152,6 +152,7 @@ reportSearch.addEventListener("click", async () => {
 });
 
 reportSubmitBtn.addEventListener("click", async () => {
+  data.STATUS = "UPDATED";
   // console.log(data);
   let c = document.querySelectorAll(".form_report");
   console.log(c);

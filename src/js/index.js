@@ -146,6 +146,7 @@ notification.addEventListener("click", async () => {
       notiRightArrow.setAttribute("id", "notiRightArrow");
       notiRightArrow.textContent = "arrow_right";
       notiTest.append(notiTestIcon, notiTestValue, notiRightArrow);
+
       notiRightArrow.addEventListener("click", (e) => {
         const testUl = document.createElement("ul");
         testUl.classList.add("notification-test-list");
@@ -165,19 +166,15 @@ notification.addEventListener("click", async () => {
         notificationPanel.append(testUl);
 
         if (notiRightArrow.textContent === "arrow_right") {
-          // notificationArea.style.display = "block";
-          // notificationArea.style.visibility = "hidden";
           notificationArea.style.transform = "translateX(50rem) scale(0)";
-          testUl.style.transform = "translateX(0rem) scale(1)";
+          testUl.style.transform = "translateX(0rem)";
         }
 
         // console.log("here");
         backBtn.addEventListener("click", () => {
-          console.log("here");
           testUl.style.transform = "translateX(50rem) scale(0)";
-          // notificationArea.style.opacity = 1;
-          // notificationArea.style.visibility = "visible";
-          notificationArea.style.transform = "translateX(0rem)";
+
+          notificationArea.style.transform = "translateX(0rem) scale(1)";
         });
       });
 

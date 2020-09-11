@@ -308,12 +308,14 @@ timeStamp = `${timeStamp.getDate()}-${
   timeStamp.getMonth() + 1
 }-${timeStamp.getFullYear()}`;
 console.log(timeStamp);
+let STATUS = "";
 let mainObj = {
   FULL_NAME,
   PHONE,
   EMAIL,
   REGION,
   AGE,
+  STATUS,
   test: [],
   TIMESTAMP: timeStamp,
   D3: new Date(),
@@ -437,6 +439,7 @@ tableBody.addEventListener("click", (s) => {
 });
 
 next.addEventListener("click", async () => {
+  mainObj.STATUS = "INITALIZED";
   const options = {
     method: "POST",
     headers: {

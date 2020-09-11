@@ -42,9 +42,9 @@ search.addEventListener("click", async () => {
   } else {
     phoneIp.style.border = "2px solid rgb(34, 79, 109)";
   }
-  // searchText.style.opacity = "0";
-  // searchText.style.visibility = "hidden";
-  // search.classList.add("btn-loading");
+  searchText.style.opacity = "0";
+  searchText.style.visibility = "hidden";
+  search.classList.add("btn-loading");
 
   const options = {
     method: "POST",
@@ -52,46 +52,51 @@ search.addEventListener("click", async () => {
       "Content-Type": "application/json",
     },
   };
-  // console.log(response.status);
-  // if (response.status === "404") {
-  //   search.classList.remove("btn-loading");
-  // }
+
+  const response = await fetch(
+    `${URL}/users/getUserByPhone?phone=${phoneIp.value}`,
+    options
+  );
   try {
-    const response = await fetch(
-      `${URL}/users/getUserByPhone?phone=${phoneIp.value}`,
-      options
-    );
-    // search.classList.remove("btn-loading");
-    // searchText.style.visibility = "visible";
-    // searchText.style.opacity = "1";
+    if (response.status === 200) {
+      if (response.status === "404") {
+        search.classList.remove("btn-loading");
+      }
+      search.classList.remove("btn-loading");
+      searchText.style.visibility = "visible";
+      searchText.style.opacity = "1";
 
-    console.log(response.status);
-    const text = await response.text();
-    data = JSON.parse(text);
-    console.log(data);
+      console.log(response.status);
+      const text = await response.text();
+      data = JSON.parse(text);
+      console.log(data);
 
-    result.textContent = data.FULL_NAME;
-    result.style.color = "rgb(34, 79, 109)";
-    result.style.border = "2px solid rgb(34, 79, 109)";
-    apply.style.display = "block";
-    create.style.top = "100%";
-    create.style.opacity = 0;
-    create.style.visibility = "hidden";
-    create.style.transition = "all .5s";
+      result.textContent = data.FULL_NAME;
+      result.style.color = "rgb(34, 79, 109)";
+      result.style.border = "2px solid rgb(34, 79, 109)";
+      apply.style.display = "block";
+      create.style.top = "100%";
+      create.style.opacity = 0;
+      create.style.visibility = "hidden";
+      create.style.transition = "all .5s";
+    }
   } catch (err) {
-    search.classList.remove("btn-loading");
-    result.textContent = "! User Not Found";
-    result.style.color = "red";
-    result.style.border = "2px solid red";
-    apply.style.display = "none";
-    create.style.top = "88%";
-    create.style.opacity = 1;
-    create.style.visibility = "visible";
-    create.style.transition = "all .5s";
+    if (response.status === 200) {
+      search.classList.remove("btn-loading");
+      result.textContent = "! User Not Found";
+      result.style.color = "red";
+      result.style.border = "2px solid red";
+      apply.style.display = "none";
+      create.style.top = "88%";
+      create.style.opacity = 1;
+      create.style.visibility = "visible";
+      create.style.transition = "all .5s";
 
-    // errorResult.style.display = "block";
-    console.log("here");
+      // errorResult.style.display = "block";
+      console.log("here");
+    }
   }
+
   // 7006225524
 });
 apply.addEventListener("click", () => {
