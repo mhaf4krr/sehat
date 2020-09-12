@@ -19,6 +19,7 @@ const partialBtn = document.querySelector(".partial");
 const recieveSection = document.querySelector(".recieve");
 const addBtn = document.querySelectorAll(".btn-add");
 const item = document.querySelectorAll("#addItem");
+const comp = document.querySelector("#comp");
 console.log(item);
 
 let completePriceArray = [];
@@ -77,143 +78,226 @@ search.addEventListener("click", async () => {
     console.log(t);
   });
 });
+const list = document.querySelector("#list");
+const tableBody = document.querySelector("#table-body");
+const remList = document.querySelector("#list-send");
+const removeUl = document.querySelector(".list-send");
+const total = document.querySelector(".total");
+const money = document.createElement("span");
+const next = document.querySelector(".print_next");
+console.log(next);
+money.classList.add("total-value");
+let sum = 0;
+
+let array = [];
+let priceArray = [];
+let testArray = [];
+
+const { FULL_NAME, PHONE, EMAIL, REGION, AGE } = data;
+let timeStamp = new Date();
+timeStamp = `${timeStamp.getDate()}-${
+  timeStamp.getMonth() + 1
+}-${timeStamp.getFullYear()}`;
+console.log(timeStamp);
+let STATUS = "";
+let PRICE = "";
+let mainObj = {
+  FULL_NAME,
+  PHONE,
+  EMAIL,
+  REGION,
+  AGE,
+  STATUS,
+  test: [],
+  PRICE,
+  TIMESTAMP: timeStamp,
+  LAB_ID: "LAB-01",
+  D3: new Date(),
+  DATE: {
+    day: new Date().getDate(),
+    month: new Date().getMonth(),
+    year: new Date().getUTCFullYear(),
+  },
+};
+
+console.log(mainObj);
+const patientName = document.querySelector("#patient-name");
+const patientPhone = document.querySelector("#patient-phone");
+const patientEmail = document.querySelector("#patient-email");
+const patientgender = document.querySelector("#patient-gender");
+const patientResidence = document.querySelector("#patient-address");
+const patientAge = document.querySelector("#patient-age");
+
+// serverArray.push(data);
+// console.log(serverArray);
+patientName.textContent = data.FULL_NAME;
+patientPhone.textContent = data.PHONE;
+patientEmail.textContent = data.EMAIL;
+patientgender.textContent = "Male";
+patientResidence.textContent = data.REGION;
+patientAge.textContent = data.AGE;
+
 let leftArray = [];
+let completeCount = 0;
 completeBtn.addEventListener("click", () => {
-  console.log("here");
-  test.forEach((t) => {
-    let getItem = document.createElement("li");
-    let getSerNo = document.createElement("span");
-    let getRemText = document.createElement("span");
+  completeCount++;
+  console.log(partialCount);
+  if (completeCount > 1) {
+    completeBtn.disabled = "true";
+  } else {
+    console.log("here");
+    test.forEach((t) => {
+      let getItem = document.createElement("li");
+      let getSerNo = document.createElement("span");
+      let getRemText = document.createElement("span");
 
-    getItem.classList.add("recieve-list-item");
-    getSerNo.classList.add("left-serial-no");
-    getRemText.classList.add("addItem");
+      getItem.classList.add("recieve-list-item");
+      getSerNo.classList.add("left-serial-no");
+      getRemText.classList.add("addItem");
 
-    let getId = document.createElement("span");
-    getId.classList.add("cId");
-    getId.textContent = t.CID;
+      let getId = document.createElement("span");
+      getId.classList.add("cId");
+      getId.textContent = t.CID;
 
-    let minRange = document.createElement("span");
-    minRange.classList.add("cId");
-    minRange.textContent = t.RANGE.min;
-    console.log(minRange);
-    let maxRange = document.createElement("span");
-    maxRange.classList.add("cId");
-    maxRange.textContent = t.RANGE.max;
+      let minRange = document.createElement("span");
+      minRange.classList.add("cId");
+      minRange.textContent = t.RANGE.min;
+      console.log(minRange);
+      let maxRange = document.createElement("span");
+      maxRange.classList.add("cId");
+      maxRange.textContent = t.RANGE.max;
 
-    console.log(t.RANGE.min);
+      console.log(t.RANGE.min);
 
-    // add.classList.add("btn-add");
-    getSerNo.textContent = test.lastIndexOf(t) + 1;
-    getRemText.textContent = t.LABEL;
-    getItem.append(getSerNo, maxRange, minRange, getId, getRemText);
-    // add.textContent = "ADD";
-    console.log(getItem);
-    listC.style.display = "flex";
-    listC.append(getItem);
-    recieveSection.style.display = "inline-block";
-    recieveSection.style.transition = "all .4s";
-    listP.style.display = "none";
-    // const completePrice = document.createElement("span");
-    // completePrice.textContent = parseInt(Math.random() * 500);
-    // completePriceArray.push(parseInt(completePrice.textContent));
+      getSerNo.textContent = test.lastIndexOf(t) + 1;
+      getRemText.textContent = t.LABEL;
+      getItem.append(getSerNo, maxRange, minRange, getId, getRemText);
+      listC.append(getItem);
 
-    // array.push(remItem);
-    let obj = {};
-    let remItem = document.createElement("tr");
-    let serNo = document.createElement("td");
-    const remText = document.createElement("td");
+      console.log(getItem);
+      listC.style.display = "flex";
+      recieveSection.style.display = "inline-block";
+      recieveSection.style.transition = "all .4s";
+      listP.style.display = "none";
 
-    const price = document.createElement("td");
-    // remItem.classList.add("item-send");
-    price.textContent = parseInt(Math.random() * 500);
-    // serNo.classList.add("serial-no");
+      // const completePrice = document.createElement("span");
+      // completePrice.textContent = parseInt(Math.random() * 500);
 
-    remItem.append(serNo, remText, price);
+      // array.push(remItem);
+      // let obj = {};
+      let remItem = document.createElement("tr");
+      let serNo = document.createElement("td");
+      serNo.textContent = test.lastIndexOf(t) + 1;
+      const remText = document.createElement("td");
+      remText.textContent = t.LABEL;
+      const price = document.createElement("td");
+      price.textContent = parseInt(Math.random() * 500);
 
-    console.log(e.target.parentElement);
+      completePriceArray.push(+price.textContent);
+      serNo.classList.add("serial-no");
 
-    const item = e.target.previousElementSibling;
+      remItem.append(serNo, remText, price, "-");
+      tableBody.append(remItem);
 
-    console.log(item);
-    const itemContent = item.textContent;
-    const id = item.previousElementSibling;
-    const itemId = id.textContent;
-    console.log(itemId);
-    const min = id.previousElementSibling;
-    minRange = min.textContent;
-    const max = min.previousElementSibling;
-    maxRange = max.textContent;
-    console.log(min);
+      let obj = {};
+      obj["LABEL"] = getRemText.textContent;
+      obj["CID"] = getId.textContent;
+      obj["RESULT"] = null;
+      obj["RANGE"] = {
+        min: minRange.textContent,
+        max: maxRange.textContent,
+      };
+      mainObj["test"].push(obj);
+      let sum = 0;
+      console.log(completePriceArray);
+      completePriceArray.forEach((p) => {
+        sum += p;
+      });
+      money.textContent = sum;
+      // console.log(e.target.parentElement);
 
-    obj["LABEL"] = itemContent;
-    obj["CID"] = itemId;
-    obj["RESULT"] = null;
-    obj["RANGE"] = {
-      min: minRange,
-      max: maxRange,
-    };
-    testArray.push(obj);
-    mainObj["test"].push(obj);
+      // const item = e.target.previousElementSibling;
 
-    console.log(testArray);
-    // console.log(serverArray);
-    console.log(mainObj);
+      // console.log(item);
+      // const itemContent = item.textContent;
+      // const id = item.previousElementSibling;
+      // const itemId = id.textContent;
+      // console.log(itemId);
+      // const min = id.previousElementSibling;
+      // minRange = min.textContent;
+      // const max = min.previousElementSibling;
+      // maxRange = max.textContent;
+      // console.log(min);
 
-    remText.textContent = itemContent;
+      // obj["LABEL"] = itemContent;
+      // obj["CID"] = itemId;
+      // obj["RESULT"] = null;
+      // obj["RANGE"] = {
+      //   min: minRange,
+      //   max: maxRange,
+      // };
+      // testArray.push(obj);
+      // mainObj["test"].push(obj);
 
-    priceArray.push(parseInt(price.textContent));
+      // console.log(testArray);
+      // // console.log(serverArray);
+      // console.log(mainObj);
 
-    array.push(remItem);
+      // remText.textContent = itemContent;
 
-    priceArray.forEach((p) => {
-      sum += p;
+      // priceArray.push(parseInt(price.textContent));
+
+      // array.push(remItem);
+
+      // priceArray.forEach((p) => {
+      //   sum += p;
+      // });
+      // total.append(money);
+      // console.log(priceArray);
     });
-  });
-  total.append(money);
-  console.log(priceArray);
-  // tableBody.addEventListener("click", (s) => {
-  //   sum = 0;
+    // tableBody.addEventListener("click", (s) => {
+    //   sum = 0;
 
-  //     let remL = s.target.parentElement;
-  //     const price = remL.children[2].textContent;
+    //     let remL = s.target.parentElement;
+    //     const price = remL.children[2].textContent;
 
-  //     let index = array.indexOf(remL);
-  //     array.splice(index, 1);
-  //     testArray.splice(index, 1);
-  //     mainObj["test"].splice(index, 1);
+    //     let index = array.indexOf(remL);
+    //     array.splice(index, 1);
+    //     testArray.splice(index, 1);
+    //     mainObj["test"].splice(index, 1);
 
-  //     console.log(testArray);
-  //     array.forEach((trace) => {
-  //       let serial = trace.firstChild;
-  //       serial.textContent = array.indexOf(trace) + 1;
-  //       tableBody.append(trace);
-  //     });
+    //     console.log(testArray);
+    //     array.forEach((trace) => {
+    //       let serial = trace.firstChild;
+    //       serial.textContent = array.indexOf(trace) + 1;
+    //       tableBody.append(trace);
+    //     });
 
-  //   completePriceArray.forEach((trace) => {
-  //     completeMoney.textContent = trace;
-  //   });
-  //   completePriceArray.forEach((p) => {
-  //     completeSum += p;
-  //   });
-  //   completePriceArray.pop();
-  //   total.textContent = completeSum;
-  //   listP.style.display = "none";
-  //   console.log(completePriceArray);
-  //   setTimeout(() => {
-  //     tableBody.append(completeMoney);
-  //     tableBody.append(getItem);
-  //   }, 1000);
-  // });
-  // printNext.style.opacity = 1;
-  // printNext.style.visibility = "visible";
-  // printNext.style.transition = "all .3s";
-  // recieveSection.style.display = "inline-block";
-  // recieveSection.style.transition = "all .4s";
-  // addBtn.forEach((e) => {
-  //   e.style.backgroundColor = "#b6eb7a";
-  // });
-  // console.log(array[0].children);
+    //   completePriceArray.forEach((trace) => {
+    //     completeMoney.textContent = trace;
+    //   });
+    //   completePriceArray.forEach((p) => {
+    //     completeSum += p;
+    //   });
+    //   completePriceArray.pop();
+    //   total.textContent = completeSum;
+    //   listP.style.display = "none";
+    //   console.log(completePriceArray);
+    //   setTimeout(() => {
+    //     tableBody.append(completeMoney);
+    //     tableBody.append(getItem);
+    //   }, 1000);
+    // });
+    // printNext.style.opacity = 1;
+    // printNext.style.visibility = "visible";
+    // printNext.style.transition = "all .3s";
+    // recieveSection.style.display = "inline-block";
+    // recieveSection.style.transition = "all .4s";
+    // addBtn.forEach((e) => {
+    //   e.style.backgroundColor = "#b6eb7a";
+    // });
+    // console.log(array[0].children);
+  }
 });
 let partialCount = 0;
 
@@ -287,61 +371,6 @@ partialBtn.addEventListener("click", () => {
 });
 
 // list.js
-const list = document.querySelector("#list");
-const tableBody = document.querySelector("#table-body");
-const remList = document.querySelector("#list-send");
-const removeUl = document.querySelector(".list-send");
-const total = document.querySelector(".total");
-const money = document.createElement("span");
-const next = document.querySelector(".print_next");
-console.log(next);
-money.classList.add("total-value");
-let sum = 0;
-
-let array = [];
-let priceArray = [];
-let testArray = [];
-
-const { FULL_NAME, PHONE, EMAIL, REGION, AGE } = data;
-let timeStamp = new Date();
-timeStamp = `${timeStamp.getDate()}-${
-  timeStamp.getMonth() + 1
-}-${timeStamp.getFullYear()}`;
-console.log(timeStamp);
-let STATUS = "";
-let mainObj = {
-  FULL_NAME,
-  PHONE,
-  EMAIL,
-  REGION,
-  AGE,
-  STATUS,
-  test: [],
-  TIMESTAMP: timeStamp,
-  D3: new Date(),
-  DATE: {
-    day: new Date().getDate(),
-    month: new Date().getMonth(),
-    year: new Date().getUTCFullYear(),
-  },
-};
-
-console.log(mainObj);
-const patientName = document.querySelector("#patient-name");
-const patientPhone = document.querySelector("#patient-phone");
-const patientEmail = document.querySelector("#patient-email");
-const patientgender = document.querySelector("#patient-gender");
-const patientResidence = document.querySelector("#patient-address");
-const patientAge = document.querySelector("#patient-age");
-
-// serverArray.push(data);
-// console.log(serverArray);
-patientName.textContent = data.FULL_NAME;
-patientPhone.textContent = data.PHONE;
-patientEmail.textContent = data.EMAIL;
-patientgender.textContent = "Male";
-patientResidence.textContent = data.REGION;
-patientAge.textContent = data.AGE;
 
 list.addEventListener("click", (e) => {
   let obj = {};
@@ -410,6 +439,7 @@ list.addEventListener("click", (e) => {
   }
 });
 total.append(money);
+
 console.log(priceArray);
 tableBody.addEventListener("click", (s) => {
   sum = 0;
@@ -440,6 +470,7 @@ tableBody.addEventListener("click", (s) => {
 
 next.addEventListener("click", async () => {
   mainObj.STATUS = "INITALIZED";
+  mainObj.PRICE = money.textContent;
   const options = {
     method: "POST",
     headers: {
@@ -453,7 +484,6 @@ next.addEventListener("click", async () => {
   const uniqueId = await response.text();
   console.log(uniqueId);
   mainObj.uniqueId = uniqueId;
-  mainObj.price = money.textContent;
   console.log(mainObj);
 
   if (response.status === 200) {

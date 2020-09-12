@@ -202,6 +202,19 @@ notification.addEventListener("click", async () => {
         notiPrice
       );
       notificationPanel.append(notificationAreaName, notificationArea);
+      drop.addEventListener("click", () => {
+        if (drop.textContent === "arrow_drop_down") {
+          notificationArea.style.opacity = 1;
+          notificationArea.style.visibility = "visible";
+          notificationArea.style.display = "block";
+          drop.textContent = "arrow_drop_up";
+        } else {
+          notificationArea.style.opacity = 0;
+          notificationArea.style.visibility = "hidden";
+          notificationArea.style.display = "none";
+          drop.textContent = "arrow_drop_down";
+        }
+      });
     });
 
     // if (response.status === 200) {
@@ -212,22 +225,9 @@ notification.addEventListener("click", async () => {
     // const top
     // drop = document.querySelector(".");
     // notificationArea = document.querySelector(".notification-area");
-    const drop = document.querySelector("#drop");
+    const drop = document.querySelectorAll("#drop");
     const notiRightArrow = document.querySelector("#notiRightArrow");
     const notificationArea = document.querySelector(".notification-area");
-    drop.addEventListener("click", () => {
-      if (drop.textContent === "arrow_drop_down") {
-        notificationArea.style.opacity = 1;
-        notificationArea.style.visibility = "visible";
-        notificationArea.style.display = "block";
-        drop.textContent = "arrow_drop_up";
-      } else {
-        notificationArea.style.opacity = 0;
-        notificationArea.style.visibility = "hidden";
-        notificationArea.style.display = "none";
-        drop.textContent = "arrow_drop_down";
-      }
-    });
   }
 });
 

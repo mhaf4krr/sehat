@@ -910,6 +910,12 @@
 .positioning:hover {
   transform: scale(1); }
 
+.row-configuration {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
 .report_container {
   position: relative;
   display: flex;
@@ -1167,6 +1173,59 @@
   font-size: 3rem;
   color: #224f6d; }
 
+.upgrade {
+  position: relative;
+  text-align: center; }
+  .upgrade_navigation {
+    background-image: linear-gradient(to right, rgba(243, 242, 242, 0.774), rgba(207, 204, 204, 0.93));
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem; }
+  .upgrade_toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: center; }
+  .upgrade_toggle-containers {
+    position: relative; }
+  .upgrade_add-container {
+    background-image: linear-gradient(to right, rgba(243, 242, 242, 0.774), rgba(207, 204, 204, 0.93));
+    padding: 1.5rem 0 0 0; }
+  .upgrade_form {
+    padding: 2rem 0; }
+  .upgrade_category {
+    margin-bottom: 1.5rem; }
+  .upgrade_retrieve-container {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(243, 242, 242, 0.774), rgba(207, 204, 204, 0.93));
+    padding: 1.5rem 0 0 0;
+    visibility: hidden;
+    opacity: 0; }
+  .upgrade_retrieve-inner-container {
+    display: inline-block;
+    border: 2px solid #224f6d;
+    padding: 1rem;
+    color: #224f6d;
+    border-radius: 1rem; }
+
+.btn-add-tests {
+  margin-right: 1.5rem; }
+
+.btn-retrieve-tests {
+  margin-left: 5rem; }
+
+#min,
+#max,
+#units {
+  width: 10rem; }
+
+.min-max-units {
+  display: inline-block;
+  width: 60%; }
+
 * {
   padding: 0;
   margin: 0;
@@ -1258,12 +1317,10 @@ body {
 .heading-secondary {
   font-size: 2rem;
   color: #224f6d;
-  margin-top: 2rem;
   display: inline-block; }
   @media (min-width: 768px) and (max-width: 1365px) {
     .heading-secondary {
-      font-size: 1.5rem;
-      margin-top: 1.5rem; } }
+      font-size: 1.5rem; } }
 
 .para-secondary {
   font-size: 1.2rem;
@@ -1339,7 +1396,6 @@ body {
   bottom: 1%; }
 
 .notification-panel {
-  position: relative;
   width: 20%;
   overflow: hidden; }
 
@@ -1348,12 +1404,14 @@ body {
   background-color: cornsilk;
   border-radius: 5px;
   margin-bottom: 1rem;
+  width: 100%;
   opacity: 0;
   visibility: hidden;
   display: none;
   transition: all 0.3s; }
 
 .notification-area-name {
+  position: relative;
   padding: 1rem 1.5rem;
   background-color: cornsilk;
   border-radius: 5px;
@@ -1389,11 +1447,30 @@ body {
 
 .notification-test-list {
   position: absolute;
-  top: 7.5rem;
-  left: 0;
+  top: 7rem;
+  right: 0;
   background-color: antiquewhite;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 20%;
   padding: 1rem 1.5rem;
   transform: translateX(50rem);
   transition: all 0.4s; }
+
+.button-report-print {
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  cursor: pointer; }
+  .button-report-print:hover {
+    transform: translateY(-0.5rem); }
+
+.b-r-p {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #224f6d;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem; }
+
+.button-report-submit {
+  text-align: center; }

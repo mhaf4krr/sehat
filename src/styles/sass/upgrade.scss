@@ -1,0 +1,75 @@
+.upgrade {
+  position: relative;
+
+  text-align: center;
+  &_navigation {
+    background-image: linear-gradient(
+      to right,
+      rgba(243, 242, 242, 0.774),
+      rgba(207, 204, 204, 0.93)
+    );
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+  &_toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+  &_toggle-containers {
+    position: relative;
+  }
+  &_add-container {
+    background-image: linear-gradient(
+      to right,
+      rgba(243, 242, 242, 0.774),
+      rgba(207, 204, 204, 0.93)
+    );
+    padding: 1.5rem 0 0 0;
+  }
+  &_form {
+    padding: 2rem 0;
+  }
+  &_category {
+    margin-bottom: 1.5rem;
+  }
+
+  &_retrieve-container {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(
+      to right,
+      rgba(243, 242, 242, 0.774),
+      rgba(207, 204, 204, 0.93)
+    );
+    padding: 1.5rem 0 0 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &_retrieve-inner-container {
+    display: inline-block;
+    border: 2px solid $color-primary;
+    padding: 1rem;
+    color: $color-primary;
+    border-radius: 1rem;
+  }
+}
+.btn-add-tests {
+  margin-right: 1.5rem;
+}
+.btn-retrieve-tests {
+  margin-left: 5rem;
+}
+#min,
+#max,
+#units {
+  width: 10rem;
+}
+.min-max-units {
+  display: inline-block;
+  width: 60%;
+}

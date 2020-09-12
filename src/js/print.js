@@ -18,7 +18,7 @@ patientPhone.textContent = data.PHONE;
 patientEmail.textContent = data.EMAIL;
 patientAge.textContent = data.AGE;
 date.textContent = data.timeStamp;
-total.textContent = `Rs. ${data.price}`;
+total.textContent = `Rs. ${data.PRICE}`;
 
 const test = data.test;
 test.forEach((trace) => {

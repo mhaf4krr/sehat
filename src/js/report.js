@@ -151,6 +151,7 @@ reportSearch.addEventListener("click", async () => {
   });
 });
 
+const reportPrint = document.querySelector(".button-report-print");
 reportSubmitBtn.addEventListener("click", async () => {
   data.STATUS = "UPDATED";
   // console.log(data);
@@ -206,8 +207,13 @@ reportSubmitBtn.addEventListener("click", async () => {
   } catch (err) {
     console.log(err);
   }
+  if (response.status === 200) {
+    reportSubmitBtn.style.transform = "scale(0)";
+    reportPrint.style.opacity = "1";
+    reportPrint.style.visibility = "visible";
+    reportPrint.style.transform = "translateY(-3rem)";
+  }
 });
-
 /*
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
@@ -234,3 +240,7 @@ fetch("https://sehat.hyderdevelops.ml/tests/update", requestOptions)
   month:
   year:
 } */
+
+reportPrint.addEventListener("click", () => {
+  window.print();
+});

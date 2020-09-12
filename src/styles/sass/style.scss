@@ -7,6 +7,7 @@
 @import "utility.scss";
 @import "report";
 @import "login";
+@import "upgrade";
 * {
   padding: 0;
   margin: 0;
@@ -144,11 +145,11 @@ body {
 .heading-secondary {
   font-size: 2rem;
   color: $color-primary;
-  margin-top: 2rem;
+  // margin-top: 2rem;
   display: inline-block;
   @include media(">=tablet", "<desktop") {
     font-size: 1.5rem;
-    margin-top: 1.5rem;
+    // margin-top: 1.5rem;
   }
 }
 .para-secondary {
@@ -246,7 +247,6 @@ body {
   bottom: 1%;
 }
 .notification-panel {
-  position: relative;
   width: 20%;
   overflow: hidden;
 }
@@ -255,12 +255,14 @@ body {
   background-color: cornsilk;
   border-radius: 5px;
   margin-bottom: 1rem;
+  width: 100%;
   opacity: 0;
   visibility: hidden;
   display: none;
   transition: all 0.3s;
 }
 .notification-area-name {
+  position: relative;
   padding: 1rem 1.5rem;
   background-color: cornsilk;
   border-radius: 5px;
@@ -296,12 +298,33 @@ body {
 }
 .notification-test-list {
   position: absolute;
-  top: 7.5rem;
-  left: 0;
+  top: 7rem;
+  right: 0;
   background-color: antiquewhite;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 20%;
   padding: 1rem 1.5rem;
   transform: translateX(50rem);
   transition: all 0.4s;
+}
+.button-report-print {
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+}
+.b-r-p {
+  display: inline-block;
+  color: $white;
+  background-color: $color-primary;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+}
+.button-report-submit {
+  text-align: center;
 }
