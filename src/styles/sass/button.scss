@@ -16,12 +16,21 @@
     border-radius: 4px;
   }
 }
-.btn-loading {
+.upgrade-btn-loading {
   background: url("../assets/Magnify-1s-200px.gif");
   background-color: $color-primary;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+.btn-loading {
+  // position: relative;
+  background: url("../assets/Magnify-1s-200px.gif");
+  background-color: $color-primary;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  // z-index: 50;
 }
 
 .btn-grey {

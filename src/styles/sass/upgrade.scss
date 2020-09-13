@@ -47,8 +47,7 @@
       rgba(207, 204, 204, 0.93)
     );
     padding: 1.5rem 0 0 0;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
   }
   &_retrieve-inner-container {
     display: inline-block;
@@ -56,6 +55,7 @@
     padding: 1rem;
     color: $color-primary;
     border-radius: 1rem;
+    margin-bottom: 1rem;
   }
 }
 .btn-add-tests {

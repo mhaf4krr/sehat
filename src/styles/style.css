@@ -669,6 +669,13 @@
       font-size: 1rem;
       border-radius: 4px; } }
 
+.upgrade-btn-loading {
+  background: url("../assets/Magnify-1s-200px.gif");
+  background-color: #224f6d;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
 .btn-loading {
   background: url("../assets/Magnify-1s-200px.gif");
   background-color: #224f6d;
@@ -1202,14 +1209,14 @@
     text-align: center;
     background-image: linear-gradient(to right, rgba(243, 242, 242, 0.774), rgba(207, 204, 204, 0.93));
     padding: 1.5rem 0 0 0;
-    visibility: hidden;
-    opacity: 0; }
+    display: none; }
   .upgrade_retrieve-inner-container {
     display: inline-block;
     border: 2px solid #224f6d;
     padding: 1rem;
     color: #224f6d;
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    margin-bottom: 1rem; }
 
 .btn-add-tests {
   margin-right: 1.5rem; }
