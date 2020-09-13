@@ -14,12 +14,19 @@
     <link rel="stylesheet" href="../src/styles/style.css" />
     <title>Test | Upgrade</title>
   </head>
+  <script>
+    const QUERY = window.location.search;
+    const URL = new URLSearchParams(QUERY);
+    let data = URL.get("paramData");
+    data = JSON.parse(data);
+    console.log(data)
+  </script>
   <body>
     <!-- upgrade-start -->
     <div class="upgrade">
       <div class="upgrade_navigation">
         <div class="lab-info">
-          <h1 class="heading-secondary" id="upgrade_lab-name">Lab-01</h1>
+          <h1 class="heading-secondary" id="upgrade_lab-name"></h1>
           <br />
           <span id="upgrade_lab-date"> &nbsp; </span>
         </div>
@@ -56,7 +63,7 @@
               <input
                 type="text"
                 class="form_input"
-                id="add-test-nmae"
+                id="add-test-name"
                 placeholder="Test-Name"
               />
             </div>

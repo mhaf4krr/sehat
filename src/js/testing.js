@@ -28,24 +28,16 @@ let completeSum = 0;
 // console.log(removeUl);
 let test = [];
 search.addEventListener("click", async () => {
+  testIp.style.textTransform = "capitalize";
+  if (testIp.value.trim() === "" && testIp.value.length < 5) {
+    testIp.style.border = "2px solid red";
+    return false;
+  } else {
+    testIp.style.border = "2px solid ";
+  }
   search.classList.add("btn-loading");
   searchText.style.opacity = 0;
   searchText.style.visibility = "hidden";
-
-  // testIp.style.textTransform = "capitalize";
-  if (testIp.value.trim() === "") {
-    testIp.style.border = "2px solid red";
-    // } else if (testIp.value.trim() === "Biotechnology") {
-    //   setTimeout(() => {
-    //     testConfirmation.style.opacity = 1;
-    //     testConfirmation.style.visibility = "visible";
-
-    //     testConfirmation.style.transition = "all .3s";
-    //     testIp.style.border = "2px solid #224f6d";
-    //   }, 1000);
-  } else {
-    testIp.style.border = "2px solid red";
-  }
   const options = {
     method: "POST",
     headers: {
@@ -144,6 +136,7 @@ completeBtn.addEventListener("click", () => {
   console.log(partialCount);
   if (completeCount > 1) {
     completeBtn.disabled = "true";
+    partialBtn.disabled = "true";
   } else {
     console.log("here");
     test.forEach((t) => {
@@ -306,6 +299,7 @@ partialBtn.addEventListener("click", () => {
   console.log(partialCount);
   if (partialCount > 1) {
     partialBtn.disabled = "true";
+    completeBtn.disabled = "true";
   }
   // test.forEach((trace) => {
   //   console.log(trace);

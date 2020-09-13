@@ -5,6 +5,7 @@ const owner = document.querySelector("#owner");
 const labName = document.querySelector("#lab-name");
 const labContact = document.querySelector("#lab-contact");
 const labLocation = document.querySelector("#lab-location");
+const upgrade = document.querySelector("#upgrade");
 
 const currentYear = document.querySelector("#current-year");
 let currYear = new Date().getFullYear();
@@ -237,6 +238,15 @@ labContact.textContent = data.CONTACT;
 labLocation.textContent = data.LOCATION;
 add.addEventListener("click", () => {
   window.location = "../public/patient.html";
+});
+
+upgrade.addEventListener("click", () => {
+  let paramData = {
+    LAB_NAME: data.LAB_NAME,
+  };
+  paramData = JSON.stringify(paramData);
+  let path = `../public/upgrade.html?paramData=${paramData}`;
+  window.location.assign(path);
 });
 
 view.addEventListener("click", () => {

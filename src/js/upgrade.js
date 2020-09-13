@@ -1,13 +1,16 @@
 // Adding Tests
 const upgardeAddBtn = document.querySelector("#upgrade_add");
-const CATEGORY = document.querySelector("#add_category");
-const LABEL = document.querySelector("#add-test-name");
-const PRICE = document.querySelector("price");
-const min = document.querySelector("#min");
-const max = document.querySelector("#max");
-const UNIT = document.querySelector("#units");
-const DESCRIPTION = document.querySelector("#add_Description");
+let CATEGORY = document.querySelector("#add-category");
+console.log(CATEGORY);
+let LABEL = document.querySelector("#add-test-name");
+let PRICE = document.querySelector("#price");
+let min = document.querySelector("#min");
+let max = document.querySelector("#max");
+let UNIT = document.querySelector("#units");
+let DESCRIPTION = document.querySelector("#add-description");
 const upgradeAddSubmit = document.querySelector("#upgrade_submit");
+const upgradeLabName = document.querySelector("#upgrade_lab-name");
+upgradeLabName.textContent = data.LAB_NAME;
 const tar = document.querySelector(".tar");
 
 const addContainer = document.querySelector(".upgrade_add-container");
@@ -21,47 +24,67 @@ upgardeAddBtn.addEventListener("click", () => {
 });
 
 upgradeAddSubmit.addEventListener("click", async () => {
-  tar.style.opacity = 0;
-  tar.style.visibility = "hidden";
-  upgradeAddSubmit.classList.add("upgrade-btn-loading");
-  upgradeAddSubmit.style.backgroundColor = "transparent";
+  if (CATEGORY.value.trim() === "") {
+    CATEGORY.style.border = "2px solid #ed6663";
+    return false;
+  } else if (LABEL.value.trim() === "") {
+    LABEL.style.border = "2px solid #ed6663";
+    return false;
+  } else if (PRICE.value.trim() === "") {
+    PRICE.style.border = "2px solid #ed6663";
+    return false;
+  } else if (min.value.trim() === "") {
+    min.style.border = "2px solid #ed6663";
+    return false;
+  } else if (max.value.trim() === "") {
+    max.style.border = "2px solid #ed6663";
+    return false;
+  } else if (DESCRIPTION.value.trim() === "") {
+    DESCRIPTION.style.border = "2px solid #ed6663";
+    return false;
+  } else {
+    tar.style.opacity = 0;
+    tar.style.visibility = "hidden";
+    upgradeAddSubmit.classList.add("upgrade-btn-loading");
+    // upgradeAddSubmit.style.backgroundColor = "transparent";
+    CATEGORY = CATEGORY.value;
+    LABEL = LABEL.value;
+    PRICE = PRICE.value;
+    min = min.value;
+    max = max.value;
+    UNIT = UNIT.value;
+    DESCRIPTION = DESCRIPTION.value;
 
-  CATEGORY = CATEGORY.value;
-  LABEL = LABEL.value;
-  PRICE = PRICE.value;
-  min = min.value;
-  max = max.value;
-  UNIT = UNIT.value;
-  DESCRIPTION = DESCRIPTION.value;
+    data = {
+      test: [
+        CATEGORY,
+        LABEL,
+        PRICE,
+        (RANGE = +{
+          min,
+          max,
+        }),
+        UNIT,
+        DESCRIPTION,
+      ],
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    //   `https://sehat.hyderdevelops.ml/tests/update`,
 
-  data = {
-    test: [
-      CATEGORY,
-      LABEL,
-      PRICE,
-      (RANGE = {
-        min,
-        max,
-      }),
-      UNIT,
-      DESCRIPTION,
-    ],
-  };
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  };
-  //   `https://sehat.hyderdevelops.ml/tests/update`,
-
-  const response = await fetch("xyz", options);
-  if (response.status === 200) {
-    upgradeAddSubmit.classList.remove("upgrade-btn-loading");
-    tar.style.opacity = 1;
-    tar.textContent = "Submitted";
-    window.location.reload();
+    const response = await fetch("xyz", options);
+    if (response.status === 200) {
+      upgradeAddSubmit.classList.remove("upgrade-btn-loading");
+      tar.style.opacity = 1;
+      tar.textContent = "Submitted";
+      window.location.reload();
+    }
+    return true;
   }
 });
 
