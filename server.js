@@ -1,12 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-
+app.use(cors());
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors());
-app.options("*", cors());
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  next();
+});
 
 app.use(express.static("public"));
 
@@ -25,7 +28,9 @@ let tests = require("./controllers/tests");
 let users = require("./controllers/users");
 let appointments = require("./controllers/appointments");
 let share = require("./controllers/share");
+let chart = require("./controllers/chart").Router;
 
+app.use("/chart", chart);
 app.use("/share", share);
 app.use("/appointments", appointments);
 app.use("/mailer", mailer);
@@ -40,4 +45,4 @@ app.get("/", (req, res) => {
   res.send("Degree kab milegi Sarkaar !");
 });
 
-app.listen(3000);
+app.listen(3005);

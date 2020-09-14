@@ -21,14 +21,13 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-  
     let data = req.body;
- 	console.log(data)
+    console.log(data);
     let result = await db.queryDatabase("labs", { LAB_ID: data.ID });
-    
-    result = result[0]
-    
-    console.log(result)
+
+    result = result[0];
+
+    console.log(result);
 
     if (result.length === 0) {
       res.send("ERROR: NO RECORD FOUND");
@@ -40,10 +39,22 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.post("/fetchLab", async (req, res) => {
+  try {
+    let lab_id = req.query.id;
+    let response = await db.queryDatabase("tests", { LAB_ID: lab_id });
+    res.send(JSON.stringify(response));
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
 router.post("/fetchAll", async (req, res) => {
   try {
     let response = await db.queryDatabase("labs", {});
-    res.send(JSON.stringify(response));
-  } catch (error) {}
+    res.json(response);
+  } catch (error) {
+    res.send(error.message);
+  }
 });
 module.exports = router;

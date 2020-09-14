@@ -28,4 +28,17 @@ router.post("/query", async (req, res) => {
   }
 });
 
+
+router.post("/add",(req,res)=>{
+  try{
+    let result = await db.insertIntoDatabase("information", req.body);
+    res.send("DONE")
+  }
+  catch(error){
+    console.log(error)
+    res.status(400).send(error.message)
+  }
+
+})
+
 module.exports = router;

@@ -138,6 +138,12 @@ router.post("/verifyOTP", async (req, res) => {
 
         user = user[0];
 
+        let result = await removeLocalDB({
+          phone: userPhone,
+        });
+
+        console.log(result);
+
         res.status(200).send(JSON.stringify(user));
       } else {
         throw new Error("OTP does not Match");
@@ -171,6 +177,18 @@ async function findLocalDB(data) {
         reject(err);
       } else {
         resolve(docs);
+      }
+    });
+  });
+}
+
+async function removeLocalDB(data) {
+  return new Promise((resolve, reject) => {
+    localDB.remove(data, {}, function (err, docs) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve("Removed from localDB");
       }
     });
   });
