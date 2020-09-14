@@ -19,7 +19,7 @@
     const URL = new URLSearchParams(QUERY);
     let data = URL.get("paramData");
     data = JSON.parse(data);
-    console.log(data)
+    console.log(data);
   </script>
   <body>
     <!-- upgrade-start -->
@@ -78,24 +78,26 @@
             </div>
             <div class="upgrade_category">
               <h2 class="heading-tertiary">Range</h2>
-              <input
-                type="text"
-                class="form_input"
-                placeholder="Min-Value"
-                id="min"
-              />
-              <input
-                type="text"
-                class="form_input"
-                placeholder="Max-value"
-                id="max"
-              />
-              <input
-                type="text"
-                class="form_input"
-                placeholder="Units"
-                id="units"
-              />
+              <div class="row-configuration-wrap">
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder="Min-Value"
+                  id="min"
+                />
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder="Max-value"
+                  id="max"
+                />
+                <input
+                  type="text"
+                  class="form_input"
+                  placeholder="Units"
+                  id="units"
+                />
+              </div>
             </div>
             <div class="upgrade-test-description upgrade_category">
               <h2 class="heading-tertiary">Test-Description</h2>
@@ -109,19 +111,19 @@
               ></textarea>
             </div>
             <div>
-              <button class="btn-complete" id="upgrade_submit"><span class="tar">Submit</span>
+              <button class="btn-complete" id="upgrade_submit">
+                <span class="tar">Submit</span>
               </button>
             </div>
           </div>
         </div>
-<!-- Retrieve Panel -->
+        <!-- Retrieve Panel -->
         <div class="upgrade_retrieve-container">
-            <div class="upgrade-heading">
-                <h1 class="heading-secondary">Tests</h1>
-                <p class="para-primary margin-small">Your Equipment Survey</p>
-                <div class="upgrade-test-list">
-                
-                  <div class="upgrade_retrieve-inner-container">
+          <div class="upgrade-heading">
+            <h1 class="heading-secondary">Tests</h1>
+            <p class="para-primary margin-small">Your Equipment Survey</p>
+            <div class="upgrade-test-list">
+              <!-- <div class="upgrade_retrieve-inner-container">
                     <div class="margin-small">
                       <h2 class="heading-secondary" id="retrieve-category">
                         Biotechnology
@@ -153,8 +155,8 @@
                         veniam aliquam neque praesentium quod voluptate?
                       </p>
                     </div>
-                </div>
-              </div>
+                </div> -->
+            </div>
           </div>
         </div>
       </div>

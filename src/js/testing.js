@@ -45,10 +45,7 @@ search.addEventListener("click", async () => {
     },
   };
   // BIOCHEMISTRY
-  const response = await fetch(
-    `${URLApi}/infoStore/query?title=BIOCHEMISTRY`,
-    options
-  );
+  const response = await fetch(`${URLApi}/infoStore/fetchAll`, options);
   try {
     search.classList.remove("btn-loading");
     searchText.style.opacity = 1;
@@ -125,88 +122,93 @@ const patientAge = document.querySelector("#patient-age");
 patientName.textContent = data.FULL_NAME;
 patientPhone.textContent = data.PHONE;
 patientEmail.textContent = data.EMAIL;
-patientgender.textContent = "Male";
+// patientgender.textContent = "Male";
 patientResidence.textContent = data.REGION;
 patientAge.textContent = data.AGE;
 
 let leftArray = [];
 let completeCount = 0;
+let count = 1;
 completeBtn.addEventListener("click", () => {
   completeCount++;
   console.log(partialCount);
   if (completeCount > 1) {
     completeBtn.disabled = "true";
-    partialBtn.disabled = "true";
   } else {
+    partialBtn.disabled = "true";
     console.log("here");
     test.forEach((t) => {
-      let getItem = document.createElement("li");
-      let getSerNo = document.createElement("span");
-      let getRemText = document.createElement("span");
+      t.TESTS.forEach((t) => {
+        let getItem = document.createElement("li");
+        let getSerNo = document.createElement("span");
+        let getRemText = document.createElement("span");
 
-      getItem.classList.add("recieve-list-item");
-      getSerNo.classList.add("left-serial-no");
-      getRemText.classList.add("addItem");
+        getItem.classList.add("recieve-list-item");
+        getSerNo.classList.add("left-serial-no");
+        getRemText.classList.add("addItem");
 
-      let getId = document.createElement("span");
-      getId.classList.add("cId");
-      getId.textContent = t.CID;
+        // let getId = document.createElement("span");
+        // getId.classList.add("cId");
+        // getId.textContent = t.CID;
 
-      let minRange = document.createElement("span");
-      minRange.classList.add("cId");
-      minRange.textContent = t.RANGE.min;
-      console.log(minRange);
-      let maxRange = document.createElement("span");
-      maxRange.classList.add("cId");
-      maxRange.textContent = t.RANGE.max;
+        let minRange = document.createElement("span");
+        minRange.classList.add("cId");
+        minRange.textContent = t.RANGE.min;
+        console.log(minRange);
+        let maxRange = document.createElement("span");
+        maxRange.classList.add("cId");
+        maxRange.textContent = t.RANGE.max;
 
-      console.log(t.RANGE.min);
+        console.log(t.RANGE.min);
 
-      getSerNo.textContent = test.lastIndexOf(t) + 1;
-      getRemText.textContent = t.LABEL;
-      getItem.append(getSerNo, maxRange, minRange, getId, getRemText);
-      listC.append(getItem);
+        getSerNo.textContent = count;
+        getRemText.textContent = t.LABEL;
+        getItem.append(getSerNo, maxRange, minRange, getRemText);
+        listC.append(getItem);
 
-      console.log(getItem);
-      listC.style.display = "flex";
-      recieveSection.style.display = "inline-block";
-      recieveSection.style.transition = "all .4s";
-      listP.style.display = "none";
+        console.log(getItem);
+        listC.style.display = "flex";
+        recieveSection.style.display = "inline-block";
+        recieveSection.style.transition = "all .4s";
+        listP.style.display = "none";
 
-      // const completePrice = document.createElement("span");
-      // completePrice.textContent = parseInt(Math.random() * 500);
+        // const completePrice = document.createElement("span");
+        // completePrice.textContent = parseInt(Math.random() * 500);
 
-      // array.push(remItem);
-      // let obj = {};
-      let remItem = document.createElement("tr");
-      let serNo = document.createElement("td");
-      serNo.textContent = test.lastIndexOf(t) + 1;
-      const remText = document.createElement("td");
-      remText.textContent = t.LABEL;
-      const price = document.createElement("td");
-      price.textContent = parseInt(Math.random() * 500);
+        // array.push(remItem);
+        // let obj = {};
 
-      completePriceArray.push(+price.textContent);
-      serNo.classList.add("serial-no");
+        let remItem = document.createElement("tr");
+        let serNo = document.createElement("td");
+        const remText = document.createElement("td");
+        remText.textContent = t.LABEL;
+        const price = document.createElement("td");
+        price.textContent = t.PRICE;
 
-      remItem.append(serNo, remText, price, "-");
-      tableBody.append(remItem);
+        completePriceArray.push(+price.textContent);
+        serNo.classList.add("serial-no");
+        console.log(test);
+        serNo.textContent = count;
+        count++;
+        remItem.append(serNo, remText, price, "-");
+        tableBody.append(remItem);
 
-      let obj = {};
-      obj["LABEL"] = getRemText.textContent;
-      obj["CID"] = getId.textContent;
-      obj["RESULT"] = null;
-      obj["RANGE"] = {
-        min: minRange.textContent,
-        max: maxRange.textContent,
-      };
-      mainObj["test"].push(obj);
-      let sum = 0;
-      console.log(completePriceArray);
-      completePriceArray.forEach((p) => {
-        sum += p;
+        let obj = {};
+        obj["LABEL"] = getRemText.textContent;
+        // obj["CID"] = getId.textContent;
+        obj["RESULT"] = null;
+        obj["RANGE"] = {
+          min: minRange.textContent,
+          max: maxRange.textContent,
+        };
+        mainObj["test"].push(obj);
+        let sum = 0;
+        console.log(completePriceArray);
+        completePriceArray.forEach((p) => {
+          sum += p;
+        });
+        money.textContent = sum;
       });
-      money.textContent = sum;
       // console.log(e.target.parentElement);
 
       // const item = e.target.previousElementSibling;
@@ -321,37 +323,39 @@ partialBtn.addEventListener("click", () => {
   // });
   else {
     test.forEach((t) => {
-      let getItem = document.createElement("li");
-      let getSerNo = document.createElement("span");
-      let getRemText = document.createElement("span");
-      const add = document.createElement("button");
-      getItem.classList.add("recieve-list-item");
-      getSerNo.classList.add("left-serial-no");
-      getRemText.classList.add("addItem");
+      t.TESTS.forEach((t) => {
+        const price = document.createElement("span");
+        price.textContent = t.PRICE;
 
-      let getId = document.createElement("span");
-      getId.classList.add("cId");
-      getId.textContent = t.CID;
+        let getItem = document.createElement("li");
+        let getSerNo = document.createElement("span");
+        let getRemText = document.createElement("span");
+        const add = document.createElement("button");
+        getItem.classList.add("recieve-list-item");
+        getSerNo.classList.add("left-serial-no");
+        getRemText.classList.add("addItem");
 
-      let minRange = document.createElement("span");
-      minRange.classList.add("cId");
-      minRange.textContent = t.RANGE.min;
-      console.log(minRange);
-      let maxRange = document.createElement("span");
-      maxRange.classList.add("cId");
-      maxRange.textContent = t.RANGE.max;
+        let minRange = document.createElement("span");
+        minRange.classList.add("cId");
+        minRange.textContent = t.RANGE.min;
+        console.log(minRange);
+        let maxRange = document.createElement("span");
+        maxRange.classList.add("cId");
+        maxRange.textContent = t.RANGE.max;
 
-      console.log(t.RANGE.min);
+        console.log(t.RANGE.min);
 
-      add.classList.add("btn-add");
-      getItem.append(getSerNo, maxRange, minRange, getId, getRemText, add);
-      getSerNo.textContent = test.lastIndexOf(t) + 1;
-      getRemText.textContent = t.LABEL;
-      add.textContent = "ADD";
-      console.log(getItem);
-      listP.style.display = "flex";
-      listP.append(getItem);
-      listC.style.display = "none";
+        add.classList.add("btn-add");
+        getItem.append(getSerNo, price, maxRange, minRange, getRemText, add);
+        getSerNo.textContent = count;
+        count++;
+        getRemText.textContent = t.LABEL;
+        add.textContent = "ADD";
+        console.log(getItem);
+        listP.style.display = "flex";
+        listP.append(getItem);
+        listC.style.display = "none";
+      });
     });
     // next.style.opacity = 1;
     // next.style.visibility = "visible";
@@ -373,9 +377,6 @@ list.addEventListener("click", (e) => {
   const remText = document.createElement("td");
   const remove = document.createElement("td");
   const price = document.createElement("td");
-  // remItem.classList.add("item-send");
-  price.textContent = parseInt(Math.random() * 500);
-  // serNo.classList.add("serial-no");
 
   remItem.append(serNo, remText, price, remove);
 
@@ -386,18 +387,19 @@ list.addEventListener("click", (e) => {
     // item.classList.add("k");
     console.log(item);
     const itemContent = item.textContent;
-    const id = item.previousElementSibling;
-    const itemId = id.textContent;
-    console.log(itemId);
-    const min = id.previousElementSibling;
+
+    const min = item.previousElementSibling;
     const minRange = min.textContent;
     const max = min.previousElementSibling;
     const maxRange = max.textContent;
+    const pvalue = max.previousElementSibling;
+    console.log(pvalue);
     console.log(min);
+
     // const maxRange = minRange.previousElementSibling.textContent;
 
     obj["LABEL"] = itemContent;
-    obj["CID"] = itemId;
+
     obj["RESULT"] = null;
     obj["RANGE"] = {
       min: minRange,
@@ -413,6 +415,8 @@ list.addEventListener("click", (e) => {
     console.log(mainObj);
 
     remText.textContent = itemContent;
+    price.textContent = +pvalue.textContent;
+
     remove.textContent = "Remove";
     remove.classList.add("btn-remove");
 

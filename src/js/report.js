@@ -43,7 +43,7 @@ reportSearch.addEventListener("click", async () => {
     patientPhone.textContent = patient.PHONE;
     patientEmail.textContent = patient.EMAIL;
     patientResidence.textContent = patient.REGION;
-    patientgender.textContent = patient.GENDER;
+
     patientAge.textContent = patient.AGE;
     console.log(patient);
 

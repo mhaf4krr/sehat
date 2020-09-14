@@ -15,6 +15,11 @@
     font-size: 1rem;
     border-radius: 4px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 .upgrade-btn-loading {
   background: url("../assets/Magnify-1s-200px.gif");
@@ -51,6 +56,11 @@
     font-size: 1rem;
     border-radius: 4px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 .btn-error {
   color: white;
@@ -69,6 +79,11 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 4px;
+  }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
   }
 }
 .btn-low {
@@ -89,6 +104,11 @@
     font-size: 1rem;
     border-radius: 4px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 .btn-search {
   color: white;
@@ -107,12 +127,17 @@
     font-size: 1.2rem;
     border-radius: 3px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
   &:hover {
     color: $color-primary;
     background: $color-secondary;
-    // transform: scale(1.2);
+    transform: scale(1.2);
     @include media(">=tablet", "<desktop") {
-      // transform: scale(1.1);
+      transform: scale(1.1);
     }
   }
 }
@@ -142,6 +167,11 @@
     font-size: 1.2rem;
     border-radius: 6px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 .btn-normal {
   color: $color-green-dark;
@@ -159,6 +189,11 @@
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     border-radius: 6px;
+  }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
   }
 }
 .btn-high {
@@ -179,6 +214,11 @@
     font-size: 1.2rem;
     border-radius: 6px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 .btn-partial {
   color: $color-primary;
@@ -196,6 +236,11 @@
     font-size: 1.2rem;
     border-radius: 6px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 .btn-add {
   color: $color-primary;
@@ -209,6 +254,11 @@
   border-radius: 4px;
   cursor: pointer;
   @include media(">=tablet", "<desktop") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
+  @include media(">=phone", "<tablet") {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 2px;
@@ -230,6 +280,11 @@
     font-size: 1rem;
     border-radius: 2px;
   }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
 }
 
 .btn-remove {
@@ -244,6 +299,9 @@
   @include media(">=tablet", "<desktop") {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    // border-radius: 2px;
+  }
+  @include media(">=phone", "<tablet") {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }

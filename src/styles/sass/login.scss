@@ -62,10 +62,21 @@
   border-radius: 1rem;
   top: 10%;
   left: 3%;
-  // background: ;
+  @include media(">=tablet", "<desktop") {
+    height: 30vh;
+    top: 10%;
+  }
+  @include media(">=phone", "<tablet") {
+    width: 0%;
+  }
 }
 .login-message {
   margin: 3rem 0 1rem 0;
+  @include media(">=phone", "<tablet") {
+    display: inline-block;
+    width: 100vw;
+    text-align: center;
+  }
 }
 
 .color {
@@ -74,6 +85,14 @@
 
   border-radius: 0.8rem;
   animation-name: rotating;
+  @include media(">=tablet", "<desktop") {
+    height: 12rem;
+    width: 12rem;
+  }
+  @include media(">=phone", "<tablet") {
+    height: 0em;
+    width: 0rem;
+  }
 }
 .color-1 {
   background-color: $color-primary;
@@ -114,30 +133,39 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: $color-primary;
+  @include media(">=phone", "<tablet") {
+    display: none;
+  }
 }
 .column-right {
   position: relative;
   width: 55%;
   text-align: center;
+  @include media(">=phone", "<tablet") {
+    width: 100%;
+  }
 }
 .login-card {
   animation: bottomUp 4s;
   position: absolute;
   border: 2px solid $color-primary;
   top: 22%;
-
-  left: 110%;
+  left: 25%;
   display: none;
-
   padding-bottom: 1.5rem;
-  // backface-visibility: hidden;
   text-align: center;
-  // transform: translate(-50%, -50%);
   width: 50%;
-  // background-color: #a0c1b8;
   background-color: #cecfd4;
   border-radius: 1.5rem;
   transition: all 0.5s;
+  @include media(">=tablet", "<desktop") {
+    top: 10%;
+  }
+  @include media(">=phone", "<tablet") {
+    left: 8%;
+    width: 85%;
+    top: 20%;
+  }
 }
 
 .lab-login-form {
@@ -199,6 +227,11 @@
   border-radius: 1.5rem;
   color: $color-primary;
   // backface-visibility: hidden;
+  @include media(">=phone", "<tablet") {
+    width: 85vw;
+    // left: 50%;
+    left: 5%;
+  }
 }
 .lab-password {
   position: relative;

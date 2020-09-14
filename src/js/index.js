@@ -53,7 +53,7 @@ notification.addEventListener("click", async () => {
 
       const notiNameValue = document.createElement("span");
       notiNameValue.classList.add("patient-name-noti");
-      notiNameValue.textContent = "Mufti Hyder Ali";
+      notiNameValue.textContent = patient.NAME;
 
       const drop = document.createElement("span");
       drop.classList.add("material-icons", "noti-icon-style", "flex-end");
@@ -64,6 +64,8 @@ notification.addEventListener("click", async () => {
       notificationAreaName.append(nameDiv);
 
       // notification area
+      const notiFl = document.createElement("div");
+      notiFl.classList.add("notiFl");
       const notificationArea = document.createElement("div");
       notificationArea.classList.add("notification-area");
 
@@ -164,7 +166,7 @@ notification.addEventListener("click", async () => {
           console.log(t);
           testUl.append(testItem);
         });
-        notificationPanel.append(testUl);
+        notiFl.append(testUl);
 
         if (notiRightArrow.textContent === "arrow_right") {
           notificationArea.style.transform = "translateX(50rem) scale(0)";
@@ -202,7 +204,8 @@ notification.addEventListener("click", async () => {
         notiTest,
         notiPrice
       );
-      notificationPanel.append(notificationAreaName, notificationArea);
+      notiFl.append(notificationArea);
+      notificationPanel.append(notificationAreaName, notiFl);
       drop.addEventListener("click", () => {
         if (drop.textContent === "arrow_drop_down") {
           notificationArea.style.opacity = 1;
