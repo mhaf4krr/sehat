@@ -1,0 +1,180 @@
+/**
+*
+* Testing
+*
+**/
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+body {
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+ "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+ "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image: linear-gradient(rgba(50, 73, 96, 0.774), rgba(255, 255, 255, 0.93)), url("../data.png");
+  background-repeat: no-repeat; }
+
+.borderrad {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.774), rgba(255, 255, 255, 0.93)); }
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  color: white;
+  padding: 20px 0; }
+  @media (min-width: 360px) and (max-width: 767px) {
+    h2 {
+      font-size: 16px;
+      padding: 20px 0; } }
+  @media (min-width: 768px) and (max-width: 1365px) {
+    h2 {
+      font-size: 20px;
+      padding: 18px 0; } }
+  @media (min-width: 1366px) {
+    h2 {
+      font-size: 29px;
+      padding: 14px 0; } }
+
+/* user details */
+.user {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 6fr));
+  grid-gap: 20px;
+  margin-bottom: 2rem;
+  background-color: #e6e4e4;
+  color: rgba(50, 73, 96, 0.774);
+  padding: 0.8rem 0;
+  border-radius: 6px; }
+  @media (min-width: 360px) and (max-width: 767px) {
+    .user {
+      grid-gap: 11px;
+      margin-bottom: 1.3rem;
+      padding: 0.6rem 0; } }
+  @media (min-width: 768px) and (max-width: 1365px) {
+    .user {
+      grid-gap: 16px;
+      margin-bottom: 1.6rem;
+      padding: 0.7rem 0; } }
+  @media (min-width: 1366px) {
+    .user {
+      grid-gap: 22px;
+      margin-bottom: 2.2rem;
+      padding: 1rem 0; } }
+
+.user_details {
+  text-align: center;
+  font-size: 1rem; }
+  @media (min-width: 360px) and (max-width: 767px) {
+    .user_details {
+      font-size: 1rem; } }
+  @media (min-width: 768px) and (max-width: 1365px) {
+    .user_details {
+      font-size: 0.8rem; } }
+  @media (min-width: 1366px) {
+    .user_details {
+      font-size: 1.1rem; } }
+
+/* Table Styles */
+.table-wrapper {
+  margin: 10px 70px 70px;
+  box-shadow: 0px 35px 40px rgba(0, 0, 0, 0.4); }
+
+.fl-table {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: white;
+  border-radius: 10px; }
+
+.fl-table td,
+.fl-table th {
+  text-align: center;
+  padding: 10px; }
+
+.fl-table td {
+  border-right: 1px solid #324960;
+  font-size: 13px; }
+
+.fl-table thead th {
+  color: #ffffff;
+  background: rgba(34, 79, 109, 0.8); }
+
+.fl-table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960; }
+
+.fl-table tr:nth-child(even) {
+  background: #f8f8f8; }
+
+/* Responsive */
+@media (max-width: 767px) {
+  .fl-table {
+    display: block;
+    width: 100%; }
+  .table-wrapper:before {
+    content: "Scroll horizontally >";
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: white;
+    padding: 0 0 10px; }
+  .fl-table thead,
+  .fl-table tbody,
+  .fl-table thead th {
+    display: block; }
+  .fl-table thead th:last-child {
+    border-bottom: none; }
+  .fl-table thead {
+    float: left; }
+  .fl-table tbody {
+    width: auto;
+    position: relative;
+    overflow-x: auto; }
+  .fl-table td,
+  .fl-table th {
+    padding: 20px 0.625em 0.625em 0.625em;
+    height: 60px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 120px;
+    font-size: 12px;
+    text-overflow: ellipsis; }
+  .fl-table thead th {
+    text-align: left;
+    border-bottom: 1px solid #f7f7f9; }
+  .fl-table tbody tr {
+    display: table-cell; }
+  .fl-table tbody tr:nth-child(odd) {
+    background: none; }
+  .fl-table tr:nth-child(even) {
+    background: transparent; }
+  .fl-table tr td:nth-child(odd) {
+    background: #f8f8f8;
+    border-right: 1px solid #e6e4e4; }
+  .fl-table tr td:nth-child(even) {
+    border-right: 1px solid #e6e4e4; }
+  .fl-table tbody td {
+    display: block;
+    text-align: center; } 
+    
+    .table-wrapper{
+    margin:0
+    }
+
+/* utilities */
+.margin-small {
+  margin-bottom: 1rem; }

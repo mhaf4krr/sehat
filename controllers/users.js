@@ -105,7 +105,7 @@ router.post("/generateOTP", async (req, res) => {
   }
 });
 
-router.get("/getUserByPhone", async (req, res) => {
+router.post("/getUserByPhone", async (req, res) => {
   let userPhone = req.query.phone;
   try {
     let user = await db.queryDatabase("users", { PHONE: userPhone });
@@ -137,6 +137,12 @@ router.post("/verifyOTP", async (req, res) => {
         let user = await db.queryDatabase("users", { PHONE: userPhone });
 
         user = user[0];
+
+        let result = await removeLocalDB({
+          phone: userPhone,
+        });
+
+        console.log(result);
 
         res.status(200).send(JSON.stringify(user));
       } else {
@@ -171,6 +177,18 @@ async function findLocalDB(data) {
         reject(err);
       } else {
         resolve(docs);
+      }
+    });
+  });
+}
+
+async function removeLocalDB(data) {
+  return new Promise((resolve, reject) => {
+    localDB.remove(data, {}, function (err, docs) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve("Removed from localDB");
       }
     });
   });
