@@ -13,8 +13,8 @@ router.post("/query", async (req, res) => {
         return {
           LABEL: test.LABEL,
           CID: test.CID,
-          RESULT:null,
-          RANGE:test.RANGE
+          RESULT: null,
+          RANGE: test.RANGE,
         };
       });
 
@@ -28,17 +28,24 @@ router.post("/query", async (req, res) => {
   }
 });
 
+router.post("/fetchAll", async (req, res) => {
+  try {
+    let result = await db.queryDatabase("information", {});
+    res.json(result);
+  } catch (e) {
+    res.status(400).send(e.message);
+  }
+  res.json(result);
+});
 
-router.post("/add",(req,res)=>{
-  try{
+router.post("/add", async (req, res) => {
+  try {
     let result = await db.insertIntoDatabase("information", req.body);
-    res.send("DONE")
+    res.send("DONE");
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error.message);
   }
-  catch(error){
-    console.log(error)
-    res.status(400).send(error.message)
-  }
-
-})
+});
 
 module.exports = router;

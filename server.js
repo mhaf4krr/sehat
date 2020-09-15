@@ -42,7 +42,7 @@ app.use("/infoStore", informationStore);
 /* Setting up Sockets */
 
 app.get("/", (req, res) => {
-  res.send("Degree kab milegi Sarkaar !");
+  res.sendFile(__dirname + "/public/landing-page/landing.html");
 });
 
 app.listen(3005);
