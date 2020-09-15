@@ -1070,12 +1070,44 @@
     .user_details-report {
       font-size: 1.5rem; } }
 
+@keyframes rotatingOne {
+  0% {
+    transform: scale(0) rotate(-60deg); }
+  50% {
+    transform: scale(0.5) rotate(60deg); }
+  100% {
+    transform: scale(1) rotate(0deg); } }
+
+@keyframes rotatingTwo {
+  0% {
+    transform: scale(0) rotate(60deg); }
+  50% {
+    transform: scale(0.5) rotate(-60deg); }
+  100% {
+    transform: scale(1) rotate(0deg); } }
+
+@keyframes topOpacity {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
 .login-container {
   position: relative;
   display: flex;
   flex-direction: row;
   height: 96vh;
   background-image: linear-gradient(rgba(243, 242, 242, 0.774), rgba(207, 204, 204, 0.93)); }
+
+@keyframes bottomUp {
+  0% {
+    transform: translateY(80%) scale(0); }
+  50% {
+    transform: translateY(-20%) scale(0.5); }
+  100% {
+    transform: translateY(0) scale(1); } }
 
 .column-left {
   position: relative;
