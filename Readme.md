@@ -37,7 +37,7 @@ The entire system is consisting of 3 main components.
 
 ---
 
-## Backend
+# Backend
 
 The project backend is powered by **NodeJS** (a JavaScript Runtime Environment). It uses a **MongoDB** instance hosted over an Atlas Instance. Currently the project is hosted on a private server. The codebase for backend has been developed considering seperation of concerns. The entire codebase has been divided into seperate modules.
 
@@ -114,32 +114,30 @@ As already mentioned that the backed is based on NodeJS. However this part of th
 
 ### 1.**NodeJS**
 
-![nodejs](http://127.0.0.1:5500/images/node.png)
-
+<img src="http://127.0.0.1:5500/images/node.png" width=00>
 NodeJS is a Javascript run-time environment that allows for the execution of JavaScript Code in the server. It is an open-source platform that is known for scalable and real time applications. NodeJS used Google's VS Engine. It is a single threaded model.
 
 ### 2. **ExpressJS**
 
-![expressjs](/images/express.png)
+<img src="/images/express.png" width=200>
 
 Express is a minial and flexible Node.js framework that provides robust features for web application development. It allows us to build APIs and use middlewares. Express is high performant with its small codebase, it delivers fast and friendly developer experience.
 
 ### 3. **NodeMailer**
 
-![expressjs](/images/nodemailer.png)
+<img src="/images/nodemailer.png" width=150>
 
 NodeMailer is a module for NodeJS applications that allows to send emails easily. Nodemailer has zero dependencies. Highly Secure and supports alot of transport methods along with email attachments.
 
 ### 4. **EJS**
 
-![expressjs](/images/ejs.png)
+<img src="/images/ejs.png" width=200>
 
 EJS stands for Embeded JavaScript. It is a templating engine that allows for generating HTML markup with JavaScript.
 
 ### 5. **Cryptr**
 
-![expressjs](/images/cryptr.png)
-
+<img src="/images/cryptr.png" height=100>
 Cryptr is a Node.js module for cryptography functions.
 
 ---
@@ -148,4 +146,66 @@ Cryptr is a Node.js module for cryptography functions.
 
 There are two databases that are used. The first being the primary and second being an in-memory database. Primary database is a NoSQL database called MongoDB. MongoDB is a schema-less database.
 
-## MongoDB
+### **MongoDB**
+
+<img src="/images/mongo.png" width=300>
+
+MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL
+database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is
+developed by MongoDB Inc.
+
+### **nedb**
+
+<img src="/images/nedb.jpg" width=300>
+
+nedb is a non persistent or in memory database for JavaScript ecosystem. It has zero dependencies. The APIs provided by nedb resemble to that of MongoDB. This is mainly used in sehat for OTP Authentication system.
+
+---
+
+## Backend System Design
+
+<img src="/images/server_design.png">
+
+Node.js is using Express.js as framework. Various modules stated are attached to individual Routers. Finally all these individual Routers are integerated with standalone Express application. NodeJS is connected to MongoDB server along with SMTP server.
+This application is made accessible over a public address.
+
+The server also responds to various API requests from Laboratory Frontend as well as Mobile Web Application.
+
+Once an API request is received by the Express application, it forwards it to the specified Router. Each Router is tied to a specific end point of the url.
+
+### **Authentication Flow**
+
+It is the responsibility of the server to verify and authenticate a request coming from either the
+Web Application or Mobile Application. The server uses an OTP system to verify the identity of
+the user. The server is sent a mobile phone number, the server retrieves the account related to
+that mobile number from the database. The phone number / linked email address is sent to an OTP which is also stored in an in-memory database. The server is sent the OTP for verification,
+in case the OTPs match the server will authenticate the request and the user is logged in. Upon
+successful verification, the server returns a JWT token as a cookie which is stored at the front
+end. This JWT token is sent with every Ajax request which is used to verify the identity of the
+user making the request.
+
+<img src="/images/otp_flow.png">
+
+---
+
+# User Web Application
+
+For ensuring a private and easy access to the information that has been collected by the laboratory, a mobile based web application is provided over a public url. Using this component, a user can easily retreive all the information pertaining to that particular user only.
+
+There are 4 main features that are provided through this application.
+
+1. ### Appointment Booking
+
+   There are serveral reasons that made us to include this feature. These are the most prominent.
+
+   - For Older people, physically coming to collection center is very hard and tedious.
+
+   - For critical or seriously ill patients who cannot come to laboratories
+
+   - For physically challenged people.
+
+<center>
+      <video  width=400>
+    <source src="/videos/appointment.mp4">
+   </video>
+</center>
