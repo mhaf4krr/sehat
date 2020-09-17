@@ -26,3 +26,5 @@ Rather than maintaining a local database for the patient records- hectic and tim
 **The overall work-flow of the Lab's Web-App revolves around the above briefly explained aspects**
 
 ## **Work-Flow**:
+
+The work-flow starts by Authenticating the Lab as:
