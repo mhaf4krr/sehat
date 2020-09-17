@@ -2,7 +2,7 @@
 
 ## Introduction
 
-sehat is a digital software solution that tries to digitize the existing system and aims at incorporating convinience towards the end users. The project is an
+SEHAT is a digital software solution that tries to digitize the existing system and aims at incorporating convinience towards the end users. The project is an
 amalgamation of two different aspects. The first one being from the User's end.
 This system has tried to enhance the user's experience by providing the following main features:
 
@@ -102,6 +102,18 @@ There are 9 main modules which work in synchronization to provide different APIs
    - _insertManyIntoDatabase_
    - _updateDatabase_
 
+   all these functions have been wrapped into Promises.
+
+   ```javascript
+   async function queryDatabase(collection, filter) {
+     return new Priomise((resolve, reject) => {
+       db.collection.query(filter).then((data) => {
+         resolve(data);
+       });
+     });
+   }
+   ```
+
 1. **Email Module** : this is one of the main components of the backend system. It establishes connection with an SMTP server. It exposes a single reusable function called sendMail.
 
 It is worth mentioning that last two modules are not exposed directly over an API for security reasons but the functions exported from them are used heavily in all other modules.
@@ -114,7 +126,7 @@ As already mentioned that the backed is based on NodeJS. However this part of th
 
 ### 1.**NodeJS**
 
-<img src="http://127.0.0.1:5500/images/node.png" width=00>
+<img src="/images/node.png" width=200>
 NodeJS is a Javascript run-time environment that allows for the execution of JavaScript Code in the server. It is an open-source platform that is known for scalable and real time applications. NodeJS used Google's VS Engine. It is a single threaded model.
 
 ### 2. **ExpressJS**
@@ -194,7 +206,7 @@ For ensuring a private and easy access to the information that has been collecte
 
 There are 4 main features that are provided through this application.
 
-1. ### Appointment Booking
+1. ### **Appointment Booking Feature**
 
    There are serveral reasons that made us to include this feature. These are the most prominent.
 
@@ -204,8 +216,64 @@ There are 4 main features that are provided through this application.
 
    - For physically challenged people.
 
-<center>
-      <video  width=400>
-    <source src="/videos/appointment.mp4">
-   </video>
+<center >
+      <img src="/videos/appointment.gif" height=550 width=260>
 </center>
+
+2. ### **History Feature**
+
+   Another important feature of User Web Application. It tries to enhance the user experience by providing following perks
+
+   - Complete record of all the tests and their corresponding results.
+
+   - RealTime data, allows users to access results as soon as they are uploaded by the laboratory.
+
+   * No need to physically preserve the reports.
+
+<center >
+      <img src="/videos/booking.gif" height=550 width=260>
+</center>
+
+3. ### **Profiler**
+
+   Profiler is one of the most exciting features provided by this web application. With all this data that has been accumilated over the time, it is not possible to dig into this data directly. Profiler uses visualizations powered by D3.js and ApexCharts.
+   These visualizations help to interpret data quickly and easily.
+
+      <center>
+         <img src="/videos/profiler.gif" height=500 width=260>
+   </center>
+
+4. ### **Share**
+
+   Many a times, we want to share our sensitive data securely. Share feature allows a user to share his profile with a trusted contact for a fixed duration of time. If the link is used within this time, it can be used for access, otherwise it will fail.
+
+      <p> 
+      <center>
+         <img src="/videos/share.gif" height=550 width=260>
+         <img src="/videos/share_verify.gif" height=550 width=260>
+      </center>
+      </p>
+
+---
+
+## Mobile Web Application Stack
+
+1. ## **ReactJS**
+
+<img src="/images/react.jpg" width=200>
+
+React is a popular JavaScript Framework for building User Interfaces. It is based on Virtual DOM which allows the DOM Manipulation in most optimum manner. The most important feature of React is code reusability and component based architecture.
+
+2. ## **Redux**
+
+Redux is an extension to React. It is also a library used to maintain the state of an application.
+
+3. ## **Axios**
+
+Axios is another popular library that is used to construct API templates and then use these templates throughout the application. It allows for configuration of request headers before hand without the need of redundant repition.
+
+4. ## **D3 and ApexCharts**
+
+<img src="/images/d3.png" width=100>
+
+D3 is one of the most popular libraries written for data visualizations in JavaScript. It is based on Scalable Vector Graphics to draw various figures dynamically. This application used D3 along with ApexCharts to include transitions and more easy approach towards plotting graphs.
