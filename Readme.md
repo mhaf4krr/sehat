@@ -247,7 +247,7 @@ There are 4 main features that are provided through this application.
 
    Many a times, we want to share our sensitive data securely. Share feature allows a user to share his profile with a trusted contact for a fixed duration of time. If the link is used within this time, it can be used for access, otherwise it will fail.
 
-      <p> 
+      <p align="center"> 
       <center>
          <img src="/videos/share.gif" height=550 width=260>
          <img src="/videos/share_verify.gif" height=550 width=260>
