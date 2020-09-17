@@ -28,3 +28,13 @@ Rather than maintaining a local database for the patient records- hectic and tim
 ## **Work-Flow**:
 
 The work-flow starts by Authenticating the Lab as:
+
+## **Technologies Used**
+
+![img-html](/src/assets/html.png "html")
+
+![img-css](/src/assets/css.png "Css")
+
+![img-sass](/src/assets/sass.png "sass")
+
+![img-JavaScript](/src/assets/javascript.png "JavaScript")
