@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../src/styles/style.css" />
-    <title>Printing Module</title>
+    <title>Receipt | Print</title>
   </head>
   <script>
     const QUERY = window.location.search;
@@ -22,60 +22,71 @@
     console.log(data);
   </script>
   <body>
-    <div class="print_container">
-      <div class="lab_details">
-        <h5 class="heading-secondary">Lab XYZ</h5>
-        <h5 class="heading-secondary" id="date"></h5>
+    <div class="receipt-container">
+      <div class="receipt-img">
+        <img src="../src/assets/medical-logo.jpg" class="receipt_img" alt="" />
       </div>
+      <div class="receipt">
+        <div class="receipt_lab-details receipt_user-details">
+          <div class="col-flex">
+            <div class="receipt-name-top">Date:</div>
+            <div class="receipt-name-top">Lab-Name:</div>
+            <div class="receipt-name-top">Lab-Address:</div>
+            <div class="receipt-name-top">Lab-Phone:</div>
+          </div>
 
-      <div class="test-patient-details print_tweek">
-        <ul class="test_list">
-          <li class="test_item">
-            <span class="material-icons margin-small"> fingerprint </span>
-            <span class="test_item-detail" id="patient-address"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small">account_circle</span>
-            <span class="test_item-detail" id="patient-name"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small"> settings_cell </span>
-            <span class="test_item-detail" id="patient-phone"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small"> email </span>
-            <span class="test_item-detail" id="patient-email"> </span>
-          </li>
-          <li class="test_item">
-            <span class="material-icons margin-small"> wc </span>
-            <span class="test_item-detail" id="patient-gender"> </span>
-          </li>
-
-          <li class="test_item">
-            <span class="material-icons margin-small"> today </span>
-            <span class="test_item-detail" id="patient-age"> </span>
-          </li>
-        </ul>
+          <div class="col-flex">
+            <div class="receipt-date underline" id="date"></div>
+            <div class="receipt-name underline">Lal-Path</div>
+            <div class="underline">Soura Branch-(A)</div>
+            <div class="underline">0194-22358962</div>
+          </div>
+        </div>
+        <div class="receipt_user-details">
+          <div class="col-flex">
+            <div class="receipt-name-top">Unique-id:</div>
+            <div class="receipt-name-top">Name:</div>
+            <div class="receipt-name-top">Age:</div>
+            <div class="receipt-name-top">Address:</div>
+            <div class="receipt-name-top">Phone:</div>
+          </div>
+          <div class="col-flex">
+            <div class="receipt-unique-id underline"></div>
+            <div class="receipt-Name underline"></div>
+            <div class="receipt-age underline"></div>
+            <div class="receipt-address underline"></div>
+            <div class="receipt-number underline"></div>
+          </div>
+        </div>
       </div>
-
-      <div class="print_test">
-        <span class="heading-secondary test-heading">&nbsp; </span>
-        <ul id="list" class="print_list">
-          <li class="recieve-list-item recieve-list-head" id="item">
-            <span class="left-serial-no recieve-list-head">S.no</span>
-            <span class="recieve-list-head">Test-Name</span>
-          </li>
-        </ul>
+      <div class="heading-tertiary">Medical Receipt</div>
+      <div class="receipt-body">
+        <div class="table-wrapper-receipt">
+          <table class="fl-table-receipt">
+            <thead>
+              <tr>
+                <th>S. No</th>
+                <th>Test</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- <tr>
+                <td>1</th>
+                <td>Sr Sodium</th> 
+                <td>2800</th>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="print_total">
-        <h5 class="print_heading">Total = <span id="total"></span></h5>
+      <div class="receipt-total">
+        <span>Total</span>
+        <span id="total">15000</span>
       </div>
-      <div class="print_print">
-        <span class="material-icons"> print </span>
-      </div>
-      <!-- <div class="print_svg">
-        <img src="../src/assets/print.png" class="print-img" alt="" />
-      </div> -->
+    </div>
+    <div class="print_print">
+      <span class="material-icons"> print </span>
     </div>
     <script src="../src/js/print.js"></script>
   </body>

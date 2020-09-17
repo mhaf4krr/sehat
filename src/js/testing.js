@@ -192,7 +192,7 @@ completeBtn.addEventListener("click", () => {
         count++;
         remItem.append(serNo, remText, price, "-");
         tableBody.append(remItem);
-
+        console.log(price.textContent);
         let obj = {};
         obj["LABEL"] = getRemText.textContent;
         // obj["CID"] = getId.textContent;
@@ -201,12 +201,14 @@ completeBtn.addEventListener("click", () => {
           min: minRange.textContent,
           max: maxRange.textContent,
         };
+        obj["price"] = price.textContent;
         mainObj["test"].push(obj);
         let sum = 0;
         console.log(completePriceArray);
         completePriceArray.forEach((p) => {
           sum += p;
         });
+        console.log(mainObj);
         money.textContent = sum;
       });
       // console.log(e.target.parentElement);
@@ -301,7 +303,6 @@ partialBtn.addEventListener("click", () => {
   console.log(partialCount);
   if (partialCount > 1) {
     partialBtn.disabled = "true";
-    completeBtn.disabled = "true";
   }
   // test.forEach((trace) => {
   //   console.log(trace);
@@ -322,10 +323,12 @@ partialBtn.addEventListener("click", () => {
   //   });
   // });
   else {
+    completeBtn.disabled = "true";
     test.forEach((t) => {
       t.TESTS.forEach((t) => {
         const price = document.createElement("span");
         price.textContent = t.PRICE;
+        price.classList.add("cId");
 
         let getItem = document.createElement("li");
         let getSerNo = document.createElement("span");
@@ -405,6 +408,7 @@ list.addEventListener("click", (e) => {
       min: minRange,
       max: maxRange,
     };
+    obj["price"] = pvalue.textContent;
 
     testArray.push(obj);
 
