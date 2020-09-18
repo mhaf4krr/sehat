@@ -75,7 +75,7 @@ loginBtn.addEventListener("click", async () => {
     };
     if (response.status === 200) {
       lab_data = JSON.stringify(lab_data);
-      let path = `../public/index.html?lab_data=${lab_data}`;
+      let path = `../public/dashboard.html?lab_data=${lab_data}`;
       window.location.assign(path);
     } else {
       alert("Unsucessful Login");

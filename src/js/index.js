@@ -175,9 +175,9 @@ notification.addEventListener("click", async () => {
 
         // console.log("here");
         backBtn.addEventListener("click", () => {
-          testUl.style.transform = "translateX(50rem) scale(0)";
+          testUl.style.transform = "translateX(50rem)";
 
-          notificationArea.style.transform = "translateX(0rem) scale(1)";
+          notificationArea.style.transform = "translateX(0rem)";
         });
       });
 
