@@ -1,0 +1,114 @@
+.login_wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(61, 59, 59);
+  position: relative;
+  min-height: 812px;
+}
+
+.login_sehat {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  padding-top: 4rem;
+}
+
+.login_form_wrapper {
+  height: 50%;
+  width: 80%;
+
+  margin: auto auto;
+  margin-top: 5rem;
+  background: #f1eded;
+  border-radius: 56px 84px 0px;
+  position: relative;
+  box-shadow: 5px 5px 1rem rgb(133, 127, 127);
+}
+
+.login_form_text {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #373131;
+  padding-top: 4rem;
+}
+
+.login_form {
+  width: 80%;
+  margin: auto auto;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.login_form_input_group {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.login_form_input_group > input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-bottom: 4px solid #736d6d;
+  font-size: 0.8rem;
+  width: 100%;
+  background-color: transparent;
+  letter-spacing: 0.2rem;
+}
+
+.input_otp_btn {
+  padding: 0.5rem 1rem;
+  margin-left: 0.4rem;
+  background-color: rgba(231, 155, 65, 1);
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 3px 3px 0.6rem gray;
+}
+
+.try_btn {
+  padding: 0.7rem 2.3rem;
+  border: none;
+  outline: none;
+  border-radius: 31px 31px 0px 31px;
+  background: #45bd75;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  box-shadow: 3px 3px 0.6rem gray;
+}
+
+.login_msg {
+  position: absolute;
+  left: 0;
+  top: -2rem;
+  padding: 0.3rem;
+  background-color: #dbdbcc;
+  width: 100%;
+  border-radius: 2%;
+  font-size: 1rem;
+  text-align: left;
+  display: none;
+}
+.danger {
+  background-color: rgb(238, 148, 148);
+  display: block;
+}
+
+.success {
+  background-color: rgb(196, 241, 123);
+  display: block;
+}
+
+.btn:active {
+  box-shadow: 2px 2px 0.2rem gray;
+}

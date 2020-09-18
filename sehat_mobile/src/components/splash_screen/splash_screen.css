@@ -1,0 +1,58 @@
+* {
+  margin: 0 0;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+}
+.splash_wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(61, 59, 59);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.splash_sehat {
+  margin: auto auto;
+  margin-top: 30%;
+  width: 70%;
+  text-align: center;
+  color: rgba(241, 241, 241, 1);
+}
+
+.splash_sehat > h1 {
+  font-size: 4rem;
+}
+
+.splash_sehat > p {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  color: rgba(223, 214, 214, 1);
+  font-family: monospace;
+}
+
+.splash_next {
+  background-color: rgba(50, 192, 107, 1);
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 59px 0px 0px 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.splash_icon_img {
+  height: 38vh;
+  margin: auto auto;
+  margin-top: 3rem;
+  transform: rotateZ(10deg);
+}

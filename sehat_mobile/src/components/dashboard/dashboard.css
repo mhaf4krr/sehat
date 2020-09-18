@@ -1,0 +1,379 @@
+.dashboard_wrapper {
+  height: 100vh;
+  width: 100vw;
+
+  position: relative;
+}
+
+.dashboard_fixed {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.dashboard_nav {
+  height: 10vh;
+  background-color: rgb(49, 47, 47);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 1rem;
+  position: sticky;
+}
+
+.dashboard_logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+.dashboard_icon_wrapper {
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.dashboard_iconlist_wrapper {
+  height: 18vh;
+  background-color: rgba(241, 239, 239, 1);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 1rem;
+  min-height: 50px;
+  position: sticky;
+  overflow: scroll;
+  border-bottom: 5px solid rgb(180, 179, 179);
+}
+
+.dashboard_icon_img {
+  height: 4.5rem;
+  width: 4.5rem;
+  background-color: rgb(219, 217, 217);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard_icon_img_icon {
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 100%;
+}
+
+.dashboard_icon_label {
+  margin-top: 0.6em;
+  font-family: "Roboto";
+  color: black;
+  font-size: 0.8rem;
+  letter-spacing: 0.06rem;
+  font-weight: lighter;
+}
+
+.book_test_wrapper {
+  background-color: rgba(70, 66, 66, 1);
+  overflow: scroll;
+  width: 100vw;
+  position: relative;
+}
+
+.book_test_heading {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: rgba(250, 189, 47, 1);
+  padding-top: 2rem;
+  padding-left: 1rem;
+  text-shadow: 2px 2px 10px rgb(184, 146, 58);
+  text-transform: uppercase;
+}
+.book_test_form {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  width: 85%;
+  margin: auto auto;
+}
+
+.book_test_form_group {
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
+}
+.book_test_form_group_label {
+  color: rgba(250, 189, 47, 1);
+  font-family: "Roboto";
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.book_test_form_group_select {
+  margin: auto auto;
+  margin-top: 1.2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 21px;
+  margin-left: 2rem;
+  background-color: "#D7D3D3";
+  width: 80%;
+  font-size: 0.8rem;
+  outline: none;
+  border: none;
+  outline: none;
+}
+
+.book_test_form_group_select > option {
+  padding: 0.5rem 0rem;
+  text-align: center;
+}
+.book_test_form_group_textarea {
+  margin-left: 2rem;
+  background-color: "#D7D3D3";
+  width: 88%;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  margin: auto auto;
+  margin-top: 1.2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  height: 5rem;
+  line-height: 1.3rem;
+}
+
+.book_test_form_group_price {
+  color: rgba(196, 196, 196, 1);
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.booking_price {
+  color: rgba(250, 189, 47, 1);
+  font-weight: 500;
+}
+
+.book_test_alright_btn {
+  background: #45bd75;
+  box-shadow: 5px 5px 10px #a1bbac;
+  border-radius: 20px 20px 0px 20px;
+  padding: 01rem 2.3rem;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  margin: auto auto;
+  display: block;
+}
+
+.history_wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(223, 223, 223, 1);
+  overflow: scroll;
+}
+
+.history_header {
+  height: 25%;
+  background-color: white;
+}
+
+.history_header_heading {
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: rgba(77, 69, 69, 1);
+}
+
+.history_header_para {
+  width: 80%;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 1rem;
+  margin: auto auto;
+  padding-top: 2rem;
+  line-height: 1.5rem;
+}
+
+.history_filter {
+  display: flex;
+  width: 100%;
+  margin: auto auto;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(71, 65, 65, 1);
+}
+.history_filter_text {
+  color: white;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.history_filter_select {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.history_table {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.history_thead {
+  background-color: rgba(196, 196, 196, 1);
+  justify-content: space-around;
+  font-family: "Roboto";
+  font-weight: 300;
+  display: flex;
+}
+
+.history_tbody {
+  width: 100vw;
+  height: 10rem;
+  position: relative;
+  overflow: scroll;
+}
+.table_row {
+  padding: 1rem;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.booking_loading_screen {
+  height: 100%;
+
+  width: 100%;
+  background: url("./bars.svg"), black;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+}
+
+.booking_loading_screen.hidden {
+  display: none;
+}
+
+.share_wrapper {
+  height: fit-content;
+}
+
+.share_card_wrapper {
+  padding-top: 3rem;
+  width: 90%;
+  margin: auto auto;
+  position: relative;
+}
+
+.share_card {
+  height: 25rem;
+  background: #e5e5e5;
+  border-radius: 27px;
+  position: relative;
+}
+.share_card_header {
+  padding: 1.5rem 1.4rem;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+
+  color: #4d4545;
+}
+
+.share_card_info {
+  width: 86%;
+  margin: auto auto;
+  text-align: justify;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.share_form {
+  width: 90%;
+  position: relative;
+  padding-top: 1.5rem;
+}
+.share_form_input_group {
+  width: 80%;
+  display: flex;
+  margin: auto auto;
+  padding-top: 1.5rem;
+}
+
+.share_form_label {
+  vertical-align: bottom;
+  margin-top: 0.6rem;
+}
+.share_form_input_group input {
+  width: 100%;
+  margin-left: 0.6rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid gray;
+  background-color: transparent;
+  outline: none;
+}
+
+.share_form_btn {
+  padding: 0.7rem 2rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  border: none;
+  background-color: #36bee7;
+  color: white;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.share_overlay {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  background-color: #45bd75;
+}
+
+.share_overlay_msg {
+  width: 80%;
+  margin: auto auto;
+  padding-top: 5rem;
+  text-align: justify;
+  line-height: 1.4rem;
+}
+.share_overlay.hidden {
+  display: none;
+}
+
+/*charts and containers*/
+
+.chart_holder {
+  margin-top: 25px;
+  padding-top: 20px;
+  border: 2px solid gray;
+}
+
+.svg_container {
+  margin-top: 20px;
+  overflow: scroll;
+}
+
+.chart_holder_label {
+  padding: 20 0;
+  text-align: center;
+}
