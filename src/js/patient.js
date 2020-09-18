@@ -39,7 +39,7 @@ search.addEventListener("click", async () => {
   console.log(phoneIp.value);
   if (!regPhone.test(phoneIp.value)) {
     phoneIp.style.border = "2px solid red";
-    console.log("h");
+
     return false;
   } else {
     phoneIp.style.border = "2px solid rgb(34, 79, 109)";
