@@ -8,12 +8,12 @@
 @import "report";
 @import "login";
 @import "upgrade";
+
 @media print {
   html,
   body {
-    color: black;
-    // font-size: 0.9em;
-    font-weight: bold;
+    color: black !important;
+    font-weight: bolder;
   }
 }
 * {
@@ -43,6 +43,7 @@ body {
     padding: 0rem;
   }
 }
+
 .index_container {
   position: relative;
   display: flex;

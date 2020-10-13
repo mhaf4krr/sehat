@@ -1408,8 +1408,8 @@
 @media print {
   html,
   body {
-    color: black;
-    font-weight: bold; } }
+    color: black !important;
+    font-weight: bolder; } }
 
 * {
   padding: 0;
