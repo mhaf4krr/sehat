@@ -12,7 +12,7 @@
     "get-uid": "^1.0.1",
     "mongodb": "^3.5.8",
     "nedb": "^1.8.0",
-    "nodemailer": "^6.4.8",
+    "nodemailer": "^6.4.16",
     "otp-generator": "^1.1.0",
     "socket.io": "^2.3.0"
   },
